@@ -1,0 +1,213 @@
+
+body {
+    background: url("/static/img/bg4.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    /* max-height: 50%; */
+    /* height: 100vh; */
+
+    /* font-family: "Courier New"; */
+    /* font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; */
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Podkova', serif;
+}
+
+
+.alert-success {
+    color: #fff;
+    background-color: rgba(57, 57, 57, 1);
+}
+
+
+.main {
+    padding-top: 210px;
+}
+
+a {
+    color: white;
+}
+a:hover {
+   color: #848484;
+}
+
+#event-card{
+    min-width: 85%;
+    cursor: pointer;
+}
+#event-card:hover {
+  background: rgba(120, 118, 118, 0.7);
+}
+.education-card{
+    min-width: 30%;
+    cursor: pointer;
+
+}
+.education-card:hover {
+  background: rgba(120, 118, 118, 0.7);
+}
+#event-card .card-body {
+    padding: 0.7rem;
+}
+
+/*  BACKGROUND CARDS & TRANSPARENT
+========================================== */
+
+/* [19:39, 22.12.2018] Елена: #251E2F */
+/* .card { background-color: rgba(37, 30, 47, 0.5); } */
+
+
+/* [19:41, 22.12.2018] Елена: #081B3C */
+/* .card { background-color: rgba(8, 27, 60, 0.5); } */
+
+/* [19:44, 22.12.2018] Елена: #393939  .modal-content*/
+.card ,#nowDate span{ background-color: rgba(57, 57, 57, 0.7); }
+.modal-content{ background-color: rgba(57, 57, 57, 1); }
+
+.btn-dark {
+    /* color    : #fff; */
+    background-color: #151515;
+    /* border-color: #343a40; */
+}
+
+/* [19:46, 22.12.2018] Елена: #002222 */
+/* .card { background-color: rgba(0, 34, 34, 0.7); } */
+
+/*  BACKGROUND CARDS & TRANSPARENT END
+========================================== */
+
+
+
+/*  LOGO & CURRENT DATE
+========================================== */
+
+
+
+/*  NAV
+========================================== */
+
+
+/*  Main MENU landing
+========================================== */
+
+/* #main-nav ul a:before {
+    display: inline-block;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-size: 0.4rem;
+    font-weight: 400;
+    content: "\f111";
+    padding: 5px;
+    padding-bottom: 8px;
+    vertical-align: middle;
+} */
+
+/*
+==========================================
+font-style: normal;
+    Main MENU landing END
+ */
+
+
+
+.table td {
+    vertical-align: middle;
+    padding: .45rem;
+}
+
+.input[type="number"] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+.input[type=number]::-webkit-inner-spin-button,
+.input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+
+.card-img-small {
+	max-width: 20%;
+	max-height: 20%;
+}
+
+.card-img-medium {
+	max-width: 30%;
+    max-height: 128px;
+}
+.card-img-edu {
+	/* max-width: 30%; */
+    max-height: 35%;
+}
+
+/* .cards-container {
+padding: 1% 4% !important; */
+/* background-image: url('img/cardback.png');*/ /* Путь к фоновому изображению */
+/* } */
+
+/*
+.carousel.carousel-fade .carousel-item {
+	-webkit-transition: opacity 2s ease-in-out;
+	-moz-transition: opacity 2s ease-in-out;
+	-ms-transition: opacity 2s ease-in-out;
+	-o-transition: opacity 2s ease-in-out;
+	transition: opacity 2s ease-in-out;
+
+} */
+
+
+/* pulse_button
+========================================== */
+
+.create-callme {position: relative;}
+.pulse {
+  margin:1px;
+  display: block;
+  /* width: 44px;
+  height: 44px; */
+  border-radius: 9%;
+  /* background: #ffffff; */
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  top: -2px;
+  bottom: -2px;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(255,255,255, 0);
+  animation: pulse 1.9s infinite;
+}
+.pulse:hover {
+  animation: none;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255,255,255, 0.9);
+  }
+  70% {
+      -webkit-box-shadow: 0 0 0 10px rgba(255,255,255, 0);
+  }
+  100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(255,255,255, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.7);
+    box-shadow: 0 0 0 0 rgba(255,255,255, 0.4);
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 10px rgba(255,255,255, 0.5);
+      box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(255,255,255, 0.3);
+      box-shadow: 0 0 0 0 rgba(255,255,255, 0);
+  }
+}
+/* ==========================================
+pulse_button end */

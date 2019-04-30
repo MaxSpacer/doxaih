@@ -1,0 +1,203 @@
+
+
+/* // Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+    .result-card{
+        min-width: 21%;
+        /* max-width: 15%; */
+    }
+    .plan-card{
+        min-width: 21%;
+        max-width: 24%;
+    }
+    .create-callme-morfing{
+        display: none;
+    }
+    .education-card{
+        min-width: 200px;
+        /* max-width: 243px; */
+        /* cursor: pointer; */
+    }
+    .for-input-spinner {
+        min-width: 130px;
+        max-width: 131px;
+    }
+    .formBuyProduct {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -5px;
+        margin-left: -5px;
+    }
+}
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+  .team-img img {
+      max-height: 140px;
+  }
+    .navbar-brand img {
+        max-height: 35px;
+    }
+
+}
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .footer .man-form{
+
+        background-position: bottom right;
+
+        background-size: contain;
+    }
+    .img-f {
+    width: inherit;
+    }
+}
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+ }
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    #id_form_footer{
+
+        padding-left: 4rem !important;
+        padding-right: 4rem !important;
+
+    }
+    .team-img > p{
+        text-align: center !important;
+
+    }
+
+    .main-promo {
+        /* position: absolute;
+        top: 10%;
+        left: 10%; */
+           /* background-image: url(""); */
+           background: url(/static/img/main-mobi.png) no-repeat;
+           background-position: center;
+           /* -moz-background-size: 100%; /* Firefox 3.6+ */
+            /* -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+            /* -o-background-size: 100%; /* Opera 9.6+ */
+            /* background-size: 100%; /* Современные браузеры */       /* width: 100%; */
+             background-size: cover; /* Фон занимает всю доступную площадь */
+             /* max-width: 100%; */
+        }
+    .main-promo a{font-size: 0.8rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .img-inner a{
+        /* position: relative; */
+        font-size: 0.8rem;
+    }
+    .img-inner {
+    position: absolute;
+    bottom: 10%;
+    left: 4%;
+    font-size: 0.8rem;
+}
+    .img-f  {
+        max-width: 100%;
+    }
+
+    #navbarCollapse {
+        /* position: fixed;
+        top: 60px;
+        right: 15px;
+        left: auto;
+        z-index: 1030;
+        background-color: inherit; */
+        /* color: orange; */
+    }
+
+    #navbarCollapse .nav-item .active{
+        /* border-bottom: 2px solid orange; */
+        /* background-color: rgba(255,255,255,.03); */
+}
+}
+/* // Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    .in-event-date{
+        top: 30%;
+    }
+
+    .img-fl{
+        position: static;
+        /* left: 0%; */
+        /* bottom: 0px; */
+        margin: 0px !important;
+        max-width: 100%;
+    }
+    #main_nav li a{
+        margin-left: 3rem;
+        margin-right: 3rem;
+        border-bottom: 1px solid #f6a584;
+        padding-left: 0px;
+    }
+    #main_nav .active a{
+        border-bottom: 0px;
+    }
+    .nav-justified .nav-item {
+
+        text-align: left;
+    }
+
+    .navbar-brand img {
+        max-height: 35px;
+        display: inline-block;
+
+    }
+
+}
+/* // Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+
+    .for-input-spinner .input-group {
+        max-width: 40px;
+    }
+    .form-control {
+        padding: .175rem .35rem;
+    }
+ }
+
+/* // Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) { ... }
+
+/* // Extra large devices (large desktops)
+// No media query since the extra-large breakpoint has no upper bound on its width
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) { ... }
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    #navbarCollapse a{
+        font-size: 0.9rem;
+    }
+ }
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+    /* #nowDate-main{
+        display: none;
+    } */
+    /* .nav-link{
+        padding: 10px;
+    } */
+
+    /* .main {
+        padding-top: 140px;
+    } */
+
+ }
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) { ... }
