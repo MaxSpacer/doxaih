@@ -25,7 +25,7 @@ SECRET_KEY = 'nroz4=s6m7iik7dgqg3s$vt4j7bx^t!o5m*6b7(#b!+235$v_#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['doxaih.ru']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -143,7 +143,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-
+# production settings
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'static_prod')
 

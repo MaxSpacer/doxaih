@@ -1,6 +1,6 @@
 from django.template.context_processors import request
 from datetime import datetime
-from landing.forms import MainForm
+from landing.forms import CallmecontactForm
 from educations.forms import EducationOrderForm
 
 def getting_now_date(request):
@@ -17,5 +17,5 @@ def getting_now_date(request):
     #         form_class = form_class_page[key]
 
     # if forms_for_page in request.path
-    form = MainForm(request.POST or None)
+    form = CallmecontactForm(request.POST or None)
     return locals()

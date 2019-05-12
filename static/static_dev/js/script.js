@@ -115,7 +115,7 @@ $(document).ready(function() {
 //placeholders for callback's form
         document.getElementById('id_contact_name').placeholder = 'Александр';
         document.getElementById('id_contact_phone').placeholder = '+7 (765)256-12-15';
-        document.getElementById('id_contact_email').placeholder = 'info@likwid.ru';
+        // document.getElementById('id_contact_email').placeholder = 'info@likwid.ru';
 //minicarousel buttons
         var owl = $('.owl-carousel');
         owl.owlCarousel({

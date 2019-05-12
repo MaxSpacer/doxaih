@@ -1,63 +1,62 @@
 {% load static %}
 {% block footer %}
 <footer class="footer pb-2 text-muted container-fluid px-0">
-{% if request.path != '/contacts/' %}
-    <div class="row p-0 bg-white justify-content-end">
-    {% include "includes/footer-form.html" %}
-    </div>
-{% endif %}
     <div class="position-relative">
-    <img src="{% static 'img/lkwid-logo-footer2.png' %}" alt="" class="img-fluid footer-logo">
-    <div class="container-fluid">
-        <div class="row justify-content-center px-5 py-5 px-lg-0">
-            <div class="col-md-4 col-lg-3 col-sm-12 px-0">
-                <h4 class="text-light text-nowrap">L I K W I D</h4>
-                <p class="text-white-50">Финансово-консалтинговая компания, реализующая эффективную работу и обучение на финансовых рынках.</p>
-            </div>
-            <div class="col-md-4 col-lg-3 nav-footer d-none d-sm-inline-flex px-0">
-                <div class="col-6 p-0">
-                        <a class="nav-link {% if request.path == '/' %} active{% endif %}" href="/">Likwid</a>
-                        <a class="nav-link text-nowrap{% if request.path == '/aboutus/' %} active{% endif %}" href="/aboutus">О нас</a>
-                        <a class="nav-link {% if '/educations/' in request.path %} active{% endif %}" href="/educations">Обучение</a>
-                        <a class="nav-link {% if '/events/' in request.path %} active{% endif %}" href="/events">Инвестиции</a>
+        <img src="{% static 'img/lkwid-logo-footer2.png' %}" alt="" class="img-fluid footer-logo">
+        <div class="container">
+            <div class="row justify-content-between p-3">
+                <div class="col-12 col-sm-3 mt-3 mt-md-0">
+                    <h4 class="text-light text-nowrap">D O X A I H</h4>
+                    <p class="text-white-50">Кафе кавказской кухни с доставкой блюд до двери Вашего дома.</p>
                 </div>
-                <div class="col-6 p-0">
-                        <a class="nav-link{% if '/events/' in request.path %} active{% endif %}" href="/events">Мероприятия</a>
-                        <a class="nav-link {% if request.path == '/contacts/' %} active{% endif %}" href="/contacts">Контакты</a>
-                        <a class="nav-link text-nowrap disabled{% if request.path == '/hall/' %} active{% endif %}" href="/hall">Закрытый клуб</a>
+                <div class="col-12 col-sm-4">
+                {% include "includes/footer-form.html" %}
+                </div>
+                <!-- <div class="col-md-4 col-lg-3 nav-footer d-none d-sm-inline-flex px-0">
+                    <div class="col-6 p-0">
+                            <a class="nav-link {% if request.path == '/' %} active{% endif %}" href="/">Мен</a>
+                            <a class="nav-link text-nowrap{% if request.path == '/aboutus/' %} active{% endif %}" href="/aboutus">О нас</a>
+                            <a class="nav-link {% if '/educations/' in request.path %} active{% endif %}" href="/educations">Обучение</a>
+                            <a class="nav-link {% if '/events/' in request.path %} active{% endif %}" href="/events">Инвестиции</a>
+                    </div>
+                    <div class="col-6 p-0">
+                            <a class="nav-link{% if '/events/' in request.path %} active{% endif %}" href="/events">Мероприятия</a>
+                            <a class="nav-link {% if request.path == '/contacts/' %} active{% endif %}" href="/contacts">Контакты</a>
+                            <a class="nav-link text-nowrap disabled{% if request.path == '/hall/' %} active{% endif %}" href="/hall">Закрытый клуб</a>
+                    </div>
+                </div> -->
+
+                <div class="col-12 col-sm-3 mt-3 mt-md-0">
+                    <table class="mx-md-auto">
+                       <tr>
+                         <td><i class="fas fa-envelope"></i></td>
+                         <td class="pl-3 text-light text-nowrap">info@doxaih.ru</td>
+                       </tr>
+                       <tr>
+                         <td><i class="fas fa-phone fa-flip-horizontal"></i></td>
+                         <td class="pl-3 text-light text-nowrap">+7 (499) 110-0230</td>
+                       </tr>
+                    </table>
                 </div>
             </div>
-            <div class="col-md-4 col-lg-3 col-sm-12 px-0">
-                <table class="mx-md-auto">
-                   <tr>
-                     <td><i class="fas fa-envelope"></i></td>
-                     <td class="pl-3 text-light text-nowrap">info@likwid.ru</td>
-                   </tr>
-                   <tr>
-                     <td><i class="fas fa-phone fa-flip-horizontal"></i></td>
-                     <td class="pl-3 text-light text-nowrap">+7 (499) 110-0230</td>
-                   </tr>
-                </table>
+            <div class="row flex-column pb-5 d-none">
+                <p class="text-center">Следите за нами в соц.сетях</p>
+                <div class="social d-flex flex-row justify-content-center align-content-center">
+                    <a href="https://vk.com/public177248775">
+                        <img src="{% static 'img/vk-icon.png' %}" alt="" class="">
+                    </a>
+                    <span class="mx-3 mx-md-1"> </span>
+                    <a href="https://instagram.com/likwidclub">
+                        <img src="{% static 'img/insta_icon.png' %}" alt="" class="">
+                    </a>
+                    <span class="mx-3 mx-md-1"> </span>
+                    <a href="https://m.facebook.com/Likwid-Club">
+                        <img src="{% static 'img/facebook-icon.png' %}" alt="" class="">
+                    </a>
+                </div>
             </div>
+    	{#	{% include "includes/login_bar.html" %}  #}
         </div>
-        <div class="row flex-column pb-5">
-            <p class="text-center">Следите за нами в соц.сетях</p>
-            <div class="social d-flex flex-row justify-content-center align-content-center">
-                <a href="https://vk.com/public177248775">
-                    <img src="{% static 'img/vk-icon.png' %}" alt="" class="">
-                </a>
-                <span class="mx-3 mx-md-1"> </span>
-                <a href="https://instagram.com/likwidclub">
-                    <img src="{% static 'img/insta_icon.png' %}" alt="" class="">
-                </a>
-                <span class="mx-3 mx-md-1"> </span>
-                <a href="https://m.facebook.com/Likwid-Club">
-                    <img src="{% static 'img/facebook-icon.png' %}" alt="" class="">
-                </a>
-            </div>
-        </div>
-	{#	{% include "includes/login_bar.html" %}  #}
     </div>
-</div>
 </footer>
 {% endblock footer %}

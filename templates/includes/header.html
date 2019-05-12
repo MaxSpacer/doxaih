@@ -1,74 +1,59 @@
 {% block header %}
 {% load static %}
+<nav class="navbar navbar-expand-md navbar-dark bg-menu p-1 text-light">
+        <div class="navbar-brand text-nowrap m-0 p-1">
+            <img class="" src="{% static 'img/dishes2.png' %}" alt="">
+        </div>
+        <div class="text-logo p-1 ml-md-3">
+            <div>Кафе</div>
+            <div>Хинкальная</div>
+            <div>г. Балашиха</div>
+        </div>
+    <!-- <aside class="reqest-get animation-active order-md-3 ml-auto">
+          <img src="{% static 'img/phone_but.png' %}" alt="" class="reqest-get_title create-callme img-fluid">
 
-<div class="header bg-likwid">
-        <nav class="navbar navbar-expand-md navbar-dark  py-3 py-md-0 px-0 ">
-            <!-- <div class="d-flex flex-row align-items-center justify-content-center"> -->
-                <!-- <a class="navbar-brand m-0" href="/"><img src="{% static 'img/logo_small.png' %}" alt="" class="img-fluid"></a> -->
-                <div class="navbar-brand logo p-2 m-0 text-nowrap">Хинкальная<sup>DOXAIH</sup></div>
-                <!-- <p class="text-nowrap"></p> -->
-            <!-- </div> -->
+        <section id="first_me" class="reqest-modul reqest-modul_request js-callback-request" style="display: none;">
+            <div id="close_me1" class="reqest-modul_close-button js-reqest-modul-close"></div>
+        </section>
+    </aside> -->
 
-            <aside class="reqest-get animation-active order-md-3 ml-auto">
-                <!-- <h3 id="callbackWidget" class="reqest-get_title"> -->
-                  <img src="{% static 'img/phone_but.png' %}" alt="" class="reqest-get_title create-callme img-fluid">
-
-
-                    <!-- <span class="reqest-get_sub-title">Call Back</span> -->
-                <!-- </h3> -->
-                <section id="first_me" class="reqest-modul reqest-modul_request js-callback-request" style="display: none;">
-                    <div id="close_me1" class="reqest-modul_close-button js-reqest-modul-close"></div>
-                    <!-- <form class="js-callback-form-root">
-                        <input type="text" name="phone_no" value="" maxlength="10" id="phone_no" class="phone_nmbr">
-                        <a onclick="Validate()" class="reqest-modul_button reqest-modul_request-button ">
-                            Call me back
-                        </a>
-                    </form> -->
-                    <!-- <p class="reqest-modul_disclaimer">One of our Travel Agents will call you back within the next <b>59 seconds</b> to discuss your travel plans. By submitting your phone number, you agree to be contacted via phone and/or sms. No booking necessary. Your personal data is 100% safe.</p> -->
-                </section>
-            </aside>
-
-			 <!-- <i class="fas fa-phone-square fa-lg create-callme btn btn-dark order-md-3 ml-auto mr-1 " type="button" name="button">
-			 </i> -->
-             <span class="p-2 d-none">
-             </span>
-
-            <button class="navbar-toggler border-0 mr-5" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-img show"></span>
-                <span class="navbar-toggler-close"></span>
-                <!-- <span><img src="{% static 'img/ipad-pro.svg' %}" type="image/svg+xml" alt=""></span> -->
-            </button>
-
-
-            <div class="collapse navbar-collapse w-100" id="navbarCollapse">
-                <nav id="main_nav" class="w-100">
-                    <ul class="nav nav-fill nav-justified flex-column flex-md-row">
-                        <li class="nav-item  {% if request.path == '/' %} active{% endif %}">
-                            <a class="nav-link" href="/">ON-LINE ЗАКАЗ</a>
-                        </li>
-                        <li class="nav-item {% if request.path == '/aboutus/' %} active{% endif %}">
-                            <a class="nav-link text-nowrap" href="/aboutus">ЗАКАЗАТЬ БАНКЕТ</a>
-                        </li>
-                        <li class="nav-item {% if '/educations/' in request.path %} active{% endif %}">
-                            <a class="nav-link" href="/educations">ОСТАВИТЬ ОТЗЫВ</a>
-                        </li>
-                        <li class="text-white py-3 px-5 d-md-none">
-                            <i class="fas fa-phone fa-flip-horizontal"></i>
-                            <span>+7 (499) 110-0230</span>
-                        </li>
-                        <li class="px-5 d-md-none">
-                            <button type="button" onclick="location.href='#id_form_footer';" class="btn btn-form px-3 px-sm-5 mb-4">Заказать звонок</button>
-                        </li>
-
-<!-- <a href="#id_contact_name" class="btn btn-form px-5 my-2">Заказать звонок</a>
-onclick="alert('Привет!'); location.href='#link';" -->
-
-
-                    </ul>
-                </nav>
-            </div>
+    <button class="navbar-toggler border-0 order-5" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-img show"></span>
+        <span class="navbar-toggler-close"></span>
+    </button>
+    <div class="collapse navbar-collapse order-6 order-md-3" id="navbarCollapse">
+        <nav id="main_nav" class="w-100">
+            <ul class="nav justify-content-center flex-column flex-md-row">
+                <li class="nav-item  {% if request.path == '/' %} active{% endif %}">
+                    <a class="nav-link" href="/">Меню</a>
+                </li>
+                <li class="nav-item {% if request.path == '/aboutus/' %} active{% endif %}">
+                    <a class="nav-link text-nowrap" href="/aboutus">Доставка</a>
+                </li>
+                <li class="nav-item {% if '/educations/' in request.path %} active{% endif %}">
+                    <a class="nav-link" href="/educations">Кафе</a>
+                </li>
+                <li class="nav-item {% if '/educations/' in request.path %} active{% endif %}">
+                    <a class="nav-link" href="/educations">Контакты</a>
+                </li>
+                <li class="text-white py-3 px-5 d-md-none">
+                    <i class="fas fa-phone fa-flip-horizontal"></i>
+                    <span>+7 (499) 110-0230</span>
+                </li>
+                <li class="px-5 d-md-none">
+                    <button type="button" onclick="location.href='#id_form_footer';" class="btn btn-form px-3 px-sm-5 mb-4">Заказать звонок</button>
+                </li>
+            </ul>
         </nav>
-    <!-- </div> -->
-</div>
+    </div>
+
+    <div class="nav-phone text-right text-nowrap order-md-4">
+        <a class="d-block" href="tel:+7 (499) 254-11-03"><i class="fas fa-phone fa-flip-horizontal fa-fw"></i><span class="d-none d-md-inline">+7 (499) 254-11-03</span></a>
+        <div class="d-none d-md-block">Приём заказов с 09:00 до 20:30</div>
+    </div>
+    <a class="order-md-5" href="/cart/" role="button">
+        <img src="{% static 'img/dish.png' %}" class="img-fluid cart-dish mx-md-3" alt="">
+    </a>
+</nav>
 
 {% endblock header %}
