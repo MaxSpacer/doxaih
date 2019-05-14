@@ -11,15 +11,14 @@ from .models import Callmecontact, Mainformcontact
 from bootstrap_modal_forms.mixins import PassRequestMixin, DeleteMessageMixin
 from products.models import *
 
+
 def landing(request):
     product_category_list = ProductCategory.objects.filter(is_active=True)
     return_list = list()
     for item in product_category_list:
         product_images = ProductImage.objects.filter(is_active=True, is_main=True, product__is_active=True, product__category = item).first()
-        return_list.append(product_images)
-    # product_images = ProductImage.objects.filter(is_active=True, is_main=True, product__is_active=True)
-    # product_images_fresh = product_images.filter(product__category__id=2)
-    # product_images_freezy = product_images.filter(product__category__id=1)
+        if product_images:
+            return_list.append(product_images)
     return render(request, 'landing/landing.html', {'product_category_list': product_category_list, 'product_image_list': return_list})
 
 
@@ -36,8 +35,6 @@ class CallmeCreateView(PassRequestMixin, SuccessMessageMixin, generic.CreateView
             # form.instance.referal = user.profile
             form.instance.referal = user.profile
         return super(CallmeCreateView, self).form_valid(form)
-
-
 
 
 class MainFormView(PassRequestMixin, SuccessMessageMixin, generic.CreateView):

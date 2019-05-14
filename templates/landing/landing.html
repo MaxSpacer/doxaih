@@ -2,41 +2,18 @@
 {% block content %}
 {% load static %}
 
-<section class="container-fluid p-0 main-promo">
-    <div class="container">
-        <div class="row pt-3">
-            <div class="col-12 col-sm-5">
-                <div class="text-light">
-                    <h5 class="">
-                        Как истинные ценители грузинской кухни мы поможем вам насладиться натуральными грузинскими блюдами и напитками.
-                        <br>Доставка свежих блюд на дом в течении получаса.
-                    </h5>
-                    <ul class="p-0">
-                        <ol class="px-0"><i class="fas fa-circle dot-size align-middle pr-3"></i>Доставка круглосуточно и бесплатно по г.Балашиха</ol>
-                        <ol class="px-0"><i class="fas fa-circle dot-size align-middle pr-3"></i>Оплата наличными курьеру</ol>
-                        <ol class="px-0"><i class="fas fa-circle dot-size align-middle pr-3"></i>Онлайн оплата на сайте</ol>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-sm-7 p-0">
-                <img class="img-fluid" src="{% static 'img/dostavka.png' %}" alt="">
-            </div>
-        </div>
-    </div>
-</section>
 
 <section class="container">
     <div class="row">
             <div class="card-deck pt-3">
                 {% for item in product_image_list %}
                     <div class="col-12 col-md-4 col-lg-3 py-md-4">
-                        <a class="card" href="">
-                            <div class=" for-zoom">
+                        <a class="card" href="{% url 'products:product_n' item.product.category.id %}">
+                            <div class="for-zoom">
                                 <img class="card-img-top img-zoom" src="{{ item.image.url }}" alt="">
-
                             </div>
-                            <div class="card-footer">
-                                <h3 class="card-title text-nowrap text-center m-0">{{ item.product.category.name }}</h3>
+                            <div class="card-footer px-1">
+                                <h3 class="card-title text-center m-0">{{ item.product.category.name }}</h3>
                             </div>
                         </a>
                     </div>

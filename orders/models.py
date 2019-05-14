@@ -11,7 +11,7 @@ class Status_order(models.Model):
 
     def __str__(self):
         return "%s" % self.status_name
-        
+
     class Meta:
         verbose_name = 'Статус заказа'
         verbose_name_plural = 'Статусы заказа'
@@ -79,7 +79,7 @@ class ProductinBasket(models.Model):
     pb_product = models.ForeignKey(Product, on_delete=models.SET_DEFAULT, blank=True, null=True, default=None)
     pb_qty = models.IntegerField(default=1)
     pb_price_per_item = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    pb_total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0) #price*qty
+    pb_total_price = models.DecimalField(max_digits=10, decimal_places=0, default=0) #price*qty
     pb_is_active = models.BooleanField(default=True)
     pb_created = models.DateTimeField(auto_now_add=True , auto_now=False)
     pb_updated = models.DateTimeField(auto_now_add=False , auto_now=True)

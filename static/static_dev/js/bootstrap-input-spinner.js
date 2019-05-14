@@ -23,9 +23,10 @@
         var config = {
             decrementButton: "<strong>-</strong>", // button text
             incrementButton: "<strong>+</strong>", // ..
+            // incrementButton: "<strong>+</strong>", // ..
             groupClass: "", // css class of the input-group (sizing with input-group-sm, input-group-lg)
-            buttonsClass: "btn-outline-success",
-            buttonsWidth: "2.5em",
+            buttonsClass: "btn-form px-3",
+            buttonsWidth: "1.8rem",
             textAlign: "center",
             autoDelay: 500, // ms holding before auto value change
             autoInterval: 100, // speed of auto value change
@@ -35,7 +36,7 @@
         }
         Object.assign(config, options)
 
-        var html = '<div class="input-group ' + config.groupClass + '">' +
+        var html = '<div class="input-group' + config.groupClass + '">' +
             '<div class="input-group-prepend">' +
             '<button style="min-width: ' + config.buttonsWidth + '" class="btn btn-decrement ' + config.buttonsClass + '" type="button">' + config.decrementButton + '</button>' +
             '</div>' +

@@ -23,6 +23,9 @@
     </button>
     <div class="collapse navbar-collapse order-6 order-md-3" id="navbarCollapse">
         <nav id="main_nav" class="w-100">
+            <form class="formsfor invisible" action="{% url 'basket_adding' %}" method="">
+                {% csrf_token %}
+            </form>
             <ul class="nav justify-content-center flex-column flex-md-row">
                 <li class="nav-item  {% if request.path == '/' %} active{% endif %}">
                     <a class="nav-link" href="/">Меню</a>
@@ -43,6 +46,9 @@
                 <li class="px-5 d-md-none">
                     <button type="button" onclick="location.href='#id_form_footer';" class="btn btn-form px-3 px-sm-5 mb-4">Заказать звонок</button>
                 </li>
+                <li class="nav-item dropdown">
+
+                </li>
             </ul>
         </nav>
     </div>
@@ -51,9 +57,48 @@
         <a class="d-block" href="tel:+7 (499) 254-11-03"><i class="fas fa-phone fa-flip-horizontal fa-fw"></i><span class="d-none d-md-inline">+7 (499) 254-11-03</span></a>
         <div class="d-none d-md-block">Приём заказов с 09:00 до 20:30</div>
     </div>
-    <a class="order-md-5" href="/cart/" role="button">
-        <img src="{% static 'img/dish.png' %}" class="img-fluid cart-dish mx-md-3" alt="">
+    <a class="nav-link dropdown-toggle order-md-5 position-relative" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <img src="{% static 'img/dish.png' %}" class="img-fluid cart-dish " alt="">
+        <span id="basket_total_nmb">{{ products_total_nmb }}
     </a>
-</nav>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-item">
+            <table id="table-basket" class="table table-hover">
+                <tbody >
+                    {% for item in products_in_basket %}
+                    <tr>
+                        <td>{{ item.pb_product }}</td>
+                        <td>{{ item.pb_qty }} шт.</td>
+                        <td>по {{ item.pb_price_per_item }} руб.</td>
+                        <td><a class="delete-item" href="{% url 'basket_adding' %}" data-product_id="{{ item.id }}">X</a></td>
+                    </tr>
+                    {% endfor %}
 
+                </tbody>
+            </table>
+        </div>
+    </div>
+</nav>
+<section class="container-fluid p-0 main-promo">
+    <div class="container">
+        <div class="row pt-3">
+            <div class="col-12 col-sm-5">
+                <div class="text-light">
+                    <h5 class="">
+                        Как истинные ценители грузинской кухни мы поможем вам насладиться натуральными грузинскими блюдами и напитками.
+                        <br>Доставка свежих блюд на дом в течении получаса.
+                    </h5>
+                    <ul class="p-0">
+                        <ol class="px-0"><i class="fas fa-circle dot-size align-middle pr-3"></i>Доставка круглосуточно и бесплатно по г.Балашиха</ol>
+                        <ol class="px-0"><i class="fas fa-circle dot-size align-middle pr-3"></i>Оплата наличными курьеру</ol>
+                        <ol class="px-0"><i class="fas fa-circle dot-size align-middle pr-3"></i>Онлайн оплата на сайте</ol>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-sm-7 p-0">
+                <img class="img-fluid" src="{% static 'img/dostavka.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock header %}

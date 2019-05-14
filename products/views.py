@@ -2,10 +2,10 @@ from django.shortcuts import render
 from products.models import *
 
 
-def product(request, product_id):
-    product = Product.objects.get(id=product_id)
+def product(request, pk):
+    products = Product.objects.filter(is_active=True, category__id=pk)
+    product_category_list = ProductCategory.objects.filter(is_active=True)
     session_key = request.session.session_key
     if not session_key:
         request.session.cycle_key()
-    # print(request.session.session_key)
-    return render(request, 'products/product.html', locals())
+    return render(request, 'products/products.html', locals())
