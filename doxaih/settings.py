@@ -86,6 +86,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 # 'doxaih.context_processors.getting_now_date',
                 'doxaih.context_processors.getting_basket_info',
+                'doxaih.context_processors.getting_popul_goods',
             ],
         },
     },

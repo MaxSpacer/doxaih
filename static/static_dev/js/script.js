@@ -92,19 +92,20 @@ $(document).ready(function() {
         var owl = $('.owl-carousel');
         owl.owlCarousel({
             loop:true,
-            margin:60,
+            margin:10,
             nav:false,
             dots:false,
             responsive:{
                 0:{
-                    items:2,
-                    margin:30
+                    items:1
+
                 },
                 600:{
-                    items:3
+                    items:2
                 },
                 1000:{
-                    items:4
+                    items:3
+
                 }
             }
         });
@@ -125,39 +126,12 @@ $(document).ready(function() {
         $(function(){
           $("input[type='number']").inputSpinner();
         });
-        // function fix_size() {
-        //     var images = $('.img-container img');
-        //     images.each(setsize);
-        //
-        //     function setsize() {
-        //         var img = $(this),
-        //             img_dom = img.get(0),
-        //             container = img.parents('.img-container');
-        //         if (img_dom.complete) {
-        //             resize();
-        //         } else img.one('load', resize);
-        //
-        //         function resize() {
-        //             if ((container.width() / container.height()) > (img_dom.width / img_dom.height)) {
-        //                 img.width('100%');
-        //                 img.height('auto');
-        //             } else {
-        //                 img.height('100%');
-        //                 img.width('auto');
-        //             }
-        //             var marginx=(img.width()-container.width())/-2,
-        //                 marginy=(img.height()-container.height())/-2;
-        //            console.log(marginx);
-        //            img.css({'margin-left': marginx, 'margin-top': marginy});
-        //
-        //         }
-        //     }
-        // }
-        // $(window).on('resize', fix_size);
-        // fix_size();
-        // $('.nav-link').click(function() {
-        //     timer = setTimeout(function() { fix_size(); }, 210);
-        //
-        // });
+        // cart Dropdown menu
+        $(document).on('click', '.cartDropdown', function() {
+            var elements = this.getElementsByTagName('span');
+              for (var i = 0; i < elements.length; i++) {
+                    elements[i].classList.toggle("show")
 
+              }
+          });
 });

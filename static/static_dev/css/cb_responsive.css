@@ -5,10 +5,7 @@
 
 // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-    #basket_total_nmb {
-        top: 32%;
-        left: 42%;
-    }
+
     .result-card{
         min-width: 21%;
         /* max-width: 15%; */
@@ -67,11 +64,14 @@
  }
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+    .owl-stage {
+        display: block;
+    }
     .text-logo{
         font-size: 0.7rem;
     }
     .cart-dish{
-        max-width: 40px;
+        max-width: 50px;
     }
     .nav-phone > a {
     font-size: 1.7rem;
@@ -96,7 +96,7 @@
     bottom: 10%;
     left: 4%;
     font-size: 0.8rem;
-}
+    }
     .img-f  {
         max-width: 100%;
     }

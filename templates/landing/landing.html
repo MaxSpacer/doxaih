@@ -2,12 +2,36 @@
 {% block content %}
 {% load static %}
 
+<!-- <section class="container-fluid p-0 main-promo"> -->
+<section class="container-fluid p-0">
+    <div class="container">
+        <div class="row pt-3">
+            <div class="col-12 col-lg-4">
+                <div class="d-flex flex-column justify-content-center h-100">
+                    <h5 class="">
+                        Как истинные ценители грузинской кухни мы поможем вам насладиться натуральными грузинскими блюдами и напитками.
+                        <br>Доставка свежих блюд на дом в течении получаса.
+                    </h5>
+                    <ul class="p-0 d-block">
+                        <ol class="px-0"><i class="fas fa-circle dot-size align-middle pr-3"></i>Доставка круглосуточно и бесплатно по г.Балашиха</ol>
+                        <ol class="px-0"><i class="fas fa-circle dot-size align-middle pr-3"></i>Оплата наличными курьеру</ol>
+                        <ol class="px-0"><i class="fas fa-circle dot-size align-middle pr-3"></i>Онлайн оплата на сайте</ol>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-lg-8 p-0">
+            {% include "includes/minicarousel.html" %}
+                <!-- <img class="img-fluid" src="{% static 'img/dostavka.png' %}" alt=""> -->
+            </div>
+        </div>
+    </div>
+</section>
 
 <section class="container">
-    <div class="row">
-            <div class="card-deck pt-3">
+    <div class="row justify-content-center">
+            <!-- <div class="card-deck "> -->
                 {% for item in product_image_list %}
-                    <div class="col-12 col-md-4 col-lg-3 py-md-4">
+                    <div class="col-12 col-md-4 col-lg-3 py-md-4 mt-3">
                         <a class="card" href="{% url 'products:product_n' item.product.category.id %}">
                             <div class="for-zoom">
                                 <img class="card-img-top img-zoom" src="{{ item.image.url }}" alt="">
@@ -18,7 +42,7 @@
                         </a>
                     </div>
                 {% endfor %}
-            </div>
+            <!-- </div> -->
     </div>
 </section>
 

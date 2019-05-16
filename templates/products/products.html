@@ -2,7 +2,7 @@
 {% block content %}
 {% load static %}
 
-<section class="mt-4">
+<section class="my-3">
     <div class="container">
         <div class="row">
             <ul class="nav">
@@ -16,34 +16,34 @@
     </div>
 </section>
 
-<section class="container">
+<section class="container my-3">
     <div class="row">
-            <div class="card-deck w-100">
+            <div class="card-deck w-100 justify-content-center">
                 {% for product in products%}
-                    <div class="col-12 col-md-4 py-md-4">
-                        <a class="card m-0" href="{% url 'products:product_n' product.id %}">
+                    <div class="card col-md-4 p-0">
+                        <!-- <a class="card m-0" href="{% url 'products:product_n' product.id %}"> -->
                             <div class="for-zoom">
                                 {% for item in product.productimage_set.all%}
                                 <img class="card-img-top img-zoom" src="{{ item.image.url }}" alt="">
                                 {% endfor %}
                             </div>
                             <div class="card-body px-2">
-                                <h4 class="card-title text-center m-0">{{ product.name }}</h4>
+                                <h5 class="card-title text-center m-0">{{ product.name }}</h5>
                             </div>
-                        </a>
+                        <!-- </a> -->
                             <div class="card-footer p-0">
-                                <form class="formBuyProduct bg-white" action="{% url 'basket_adding' %}">{% csrf_token %}
+                                <form class="formBuyProduct bg-white text-center" action="{% url 'basket_adding' %}">{% csrf_token %}
                                     <div class="row justify-content-around">
                                         <div class="col-3 p-2">
                                             <div class="card__info">{{ product.weight }} гр.</div>
                                             <div property="price" class="card__price">{{ product.price }} руб.</div>
                                         </div>
-                                        <div class="col-5 p-3">
+                                        <div class="col-5 p-2">
                                             <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
                                             <input type="number" class="inBuyProduct form-control" placeholder="Шт." min="0" max="99" value="1" required>
                                         </div>
                                     </div>
-                                    <button type="submit" class="inBuyBtn btn btn-form btn-block flex-wrap btn-lg" data-product_id="{{ product.id }}" data-product_name="{{ product.name }}"
+                                    <button type="submit" class="inBuyBtn btn btn-form flex-wrap my-2" data-product_id="{{ product.id }}" data-product_name="{{ product.name }}"
                                     data-product_price="{{ product.price }}">
                                     В корзину.
                                     </button>
@@ -54,97 +54,6 @@
             </div>
     </div>
 </section>
-
-
-
-
-
-<div class="container">
-   <div class="row">
-        <div class="col-lg-6">
-            {% for image_item in products.productimage_set.all %}
-           <div class="product-image-item">
-               <img src="{{ image_item.image.url }}" class="img-fluid">
-           </div>
-            {% endfor %}
-        </div>
-        <div class="col-lg-6">
-            <div class="card-deck">
-                <div class="card text-center">
-                	<div class="card-header">
-                		<h5 class="card-title">{{ products.name }}</h5>
-                        <ul class="nav nav-tabs nav-fill card-header-tabs">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="pill" id="description-tab" active" href="#description">Описание</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="pill" id="detail-tab" href="#details">Детали</a>
-                            </li>
-                        </ul>
-                	</div>
-                	<div class="card-body float-right">
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="description" role="tabpanel" aria-labelledby="description-tab">
-                                <p class="card-text">
-                                    {{ products.description }}
-                                </p>
-                            </div>
-                            <div class="tab-pane" id="details" role="tabpanel" aria-labelledby="detail-tab">
-                                <p class="card-text">
-                                {{ products.name }}
-                                </p>
-                            </div>
-                        </div>
-                	</div>
-                	<ul class="list-group list-group-flush">
-                		<li class="list-group-item">
-                			{{ products.price }} Рублей.
-                		</li>
-                	</ul>
-                	<div class="card-footer p-1">
-                        <form class="formBuyProduct" action="{% url 'basket_adding' %}">{% csrf_token %}
-                            <div class="col-sm-4 my-1">
-                                <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
-                                <input type="number" class="inBuyProduct form-control" placeholder="Шт." min="0" max="99" value="1" required>
-                            </div>
-                            <div class="col-sm-8 my-1">
-                                <button type="submit" class="inBuyBtn btn btn-success btn-block" data-product_id="{{ products.id }}" data-product_name="{{ product.name }}"
-                                data-product_price="{{ products.price }}">
-                                Добавить в корзину.
-                                </button>
-                            </div>
-                        </form>
-
-
-
-
-
-
-
-
-                        <!-- <form class="form" novalidate>
-                          <div class="form-group ">
-                            <div class="col-3">
-                              <label for="form-bying-product" hidden></label>
-                              <input type="number" class="form-control" id="form-bying-product" placeholder="Шт." min="0" max="99" value="1" required>
-                              <div class="invalid-tooltip">
-                                Введите необходимое количество.
-                              </div>
-                            </div>
-                            <div class="col-9">
-                                <button class="btn btn-primary btn-block" type="submit">В корзину</button>
-                            </div>
-                          </div>
-                        </form> -->
-
-
-                	</div>
-                </div>
-            </div>
-        <div>
-    </div>
-</div>
-
 
 <!--
 <h1 class="text-center">

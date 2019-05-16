@@ -25,8 +25,8 @@
             incrementButton: "<strong>+</strong>", // ..
             // incrementButton: "<strong>+</strong>", // ..
             groupClass: "", // css class of the input-group (sizing with input-group-sm, input-group-lg)
-            buttonsClass: "btn-form px-3",
-            buttonsWidth: "1.8rem",
+            buttonsClass: "btn-form-id p-0",
+            buttonsWidth: "1.5rem",
             textAlign: "center",
             autoDelay: 500, // ms holding before auto value change
             autoInterval: 100, // speed of auto value change
@@ -36,7 +36,7 @@
         }
         Object.assign(config, options)
 
-        var html = '<div class="input-group' + config.groupClass + '">' +
+        var html = '<div class="input-group flex-nowrap' + config.groupClass + '">' +
             '<div class="input-group-prepend">' +
             '<button style="min-width: ' + config.buttonsWidth + '" class="btn btn-decrement ' + config.buttonsClass + '" type="button">' + config.decrementButton + '</button>' +
             '</div>' +

@@ -18,6 +18,7 @@ body {
     /* font-family: 'Podkova', serif; */
     /* font-family: 'Roboto', sans-serif; */
 }
+a{color: #f28356;}
 .bg-menu{
     background-color: rgba(0,0,0,.65);
 }
@@ -126,11 +127,16 @@ a:hover {
     border: 0;
   /* border-bottom: 1px;
   border-color: white; */
-   }
-
+   /* } */
+.btn-form-id {
+    font-size: 2rem;
+    background-color: none;
+}
 .form-control {
-    color: white;
+    height: auto;
+    padding: 2px;
     border: 0;
+    min-width: 2rem;
   /* border-bottom: 1px;
   border-color: white; */
    }
@@ -148,20 +154,7 @@ opacity: 0.3; }
 .form-control::placeholder { color: white;
 opacity: 0.3; } */
 
-.circle-number{
-    width: 2.2rem;
-    height: 2.2rem;
-    min-width: 2.2rem;
-    color: white;
-    background-color: #f28356;
-    border-bottom: 1px solid #f28356;
-    border-radius: 3rem;
-    /* padding-left: 0.5rem; */
-    font-weight: 800;
-    font-size: 1.2rem;
 
-
-}
 .img-inner{
     position: absolute;
     /* bottom: 20%; */
@@ -217,7 +210,7 @@ opacity: 0.3; } */
     transition: transform .2s;
 }
 .img-zoom:hover {
-  transform: scale(1.4); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
 .event-card img{
@@ -598,24 +591,9 @@ button:focus {
 }
 #basket_total_nmb {
     position: absolute;
-    top: 24%;
-    left: 35%;
+    top: 29%;
+    left: 45%;
 }
-/*  Main MENU landing
-========================================== */
-#carouselExampleFade .carousel-inner{
-    max-height: 300px;
-}
-
-
-/*
-==========================================
-font-style: normal;
-    Main MENU landing END
- */
-
-
-
 .tx{
     border: 1px black; /* Параметры границы */
     background: black; /* Цвет фона */
@@ -705,14 +683,26 @@ font-style: normal;
 
 /* minicarousel
 ========================================== */
-.owl-item img {
+/* .owl-item img {
     opacity:.25;
- }
-.owl-item img:hover { opacity: 1; }
+ } */
+/* .owl-item img:hover { opacity: 1; } */
+/* .pop-goods-image {max-height: 10rem;} */
 .customNextBtn, .customPrevBtn{
     max-width: 35px;
-    max-height: 35px;
+    max-height: 50px;
+    color: white;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    background-color: rgba(25, 25, 25, 0.5);
     opacity:.25;
+}
+.customNextBtn {
+    right: 25px;
+}
+.customPrevBtn {
+    left: 25px;
 }
 .customNextBtn:hover, .customPrevBtn:hover{
     opacity: 1;

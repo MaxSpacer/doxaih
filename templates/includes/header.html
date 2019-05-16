@@ -57,12 +57,12 @@
         <a class="d-block" href="tel:+7 (499) 254-11-03"><i class="fas fa-phone fa-flip-horizontal fa-fw"></i><span class="d-none d-md-inline">+7 (499) 254-11-03</span></a>
         <div class="d-none d-md-block">Приём заказов с 09:00 до 20:30</div>
     </div>
-    <a class="nav-link dropdown-toggle order-md-5 position-relative" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <div class="order-md-5 position-relative px-2" id="cartDropdown">
         <img src="{% static 'img/dish.png' %}" class="img-fluid cart-dish " alt="">
-        <span id="basket_total_nmb">{{ products_total_nmb }}
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <div class="dropdown-item">
+        <span id="basket_total_nmb">{{ products_total_nmb }}</span>
+    </div>
+    <div class="cart-dropdown-menu d-none">
+        <!-- <div class="dropdown-item"> -->
             <table id="table-basket" class="table table-hover">
                 <tbody >
                     {% for item in products_in_basket %}
@@ -76,29 +76,8 @@
 
                 </tbody>
             </table>
-        </div>
+        <!-- </div> -->
     </div>
 </nav>
-<section class="container-fluid p-0 main-promo">
-    <div class="container">
-        <div class="row pt-3">
-            <div class="col-12 col-sm-5">
-                <div class="text-light">
-                    <h5 class="">
-                        Как истинные ценители грузинской кухни мы поможем вам насладиться натуральными грузинскими блюдами и напитками.
-                        <br>Доставка свежих блюд на дом в течении получаса.
-                    </h5>
-                    <ul class="p-0">
-                        <ol class="px-0"><i class="fas fa-circle dot-size align-middle pr-3"></i>Доставка круглосуточно и бесплатно по г.Балашиха</ol>
-                        <ol class="px-0"><i class="fas fa-circle dot-size align-middle pr-3"></i>Оплата наличными курьеру</ol>
-                        <ol class="px-0"><i class="fas fa-circle dot-size align-middle pr-3"></i>Онлайн оплата на сайте</ol>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-12 col-sm-7 p-0">
-                <img class="img-fluid" src="{% static 'img/dostavka.png' %}" alt="">
-            </div>
-        </div>
-    </div>
-</section>
+
 {% endblock header %}
