@@ -1,22 +1,14 @@
 {% block header %}
 {% load static %}
-<nav class="navbar navbar-expand-md navbar-dark bg-menu p-1 text-light">
-        <div class="navbar-brand text-nowrap m-0 p-1">
-            <img class="" src="{% static 'img/dishes2.png' %}" alt="">
-        </div>
-        <div class="text-logo p-1 ml-md-3">
-            <div>Кафе</div>
-            <div>Хинкальная</div>
-            <div>г. Балашиха</div>
-        </div>
-    <!-- <aside class="reqest-get animation-active order-md-3 ml-auto">
-          <img src="{% static 'img/phone_but.png' %}" alt="" class="reqest-get_title create-callme img-fluid">
-
-        <section id="first_me" class="reqest-modul reqest-modul_request js-callback-request" style="display: none;">
-            <div id="close_me1" class="reqest-modul_close-button js-reqest-modul-close"></div>
-        </section>
-    </aside> -->
-
+<nav class="navbar navbar-expand-md bg-menu p-1 text-light">
+    <div class="navbar-brand text-nowrap m-0 p-1">
+        <img class="" src="{% static 'img/dishes2.png' %}" alt="">
+    </div>
+    <div class="text-logo p-1 ml-md-3">
+        <div>Кафе</div>
+        <div>Хинкальная</div>
+        <div>г. Балашиха</div>
+    </div>
     <button class="navbar-toggler border-0 order-5" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-img show"></span>
         <span class="navbar-toggler-close"></span>
@@ -52,7 +44,6 @@
             </ul>
         </nav>
     </div>
-
     <div class="nav-phone text-right text-nowrap order-md-4">
         <a class="d-block" href="tel:+7 (499) 254-11-03"><i class="fas fa-phone fa-flip-horizontal fa-fw"></i><span class="d-none d-md-inline">+7 (499) 254-11-03</span></a>
         <div class="d-none d-md-block">Приём заказов с 09:00 до 20:30</div>
@@ -61,13 +52,12 @@
         <img src="{% static 'img/dish.png' %}" class="img-fluid cart-dish " alt="">
         <span id="basket_total_nmb">{{ products_total_nmb }}</span>
     </div>
-    <div class="cart-dropdown-menu d-none">
-        <!-- <div class="dropdown-item"> -->
-            <table id="table-basket" class="table table-hover">
+    <div class="cart-dropdown-menu bg-menu text-nowrap mx-3 mx-md-0">
+            <table id="table-basket" class="table table-hover m-0">
                 <tbody >
                     {% for item in products_in_basket %}
                     <tr>
-                        <td>{{ item.pb_product }}</td>
+                        <td class="text-wrap">{{ item.pb_product }}</td>
                         <td>{{ item.pb_qty }} шт.</td>
                         <td>по {{ item.pb_price_per_item }} руб.</td>
                         <td><a class="delete-item" href="{% url 'basket_adding' %}" data-product_id="{{ item.id }}">X</a></td>
@@ -76,7 +66,6 @@
 
                 </tbody>
             </table>
-        <!-- </div> -->
     </div>
 </nav>
 

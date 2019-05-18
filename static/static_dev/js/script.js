@@ -47,9 +47,7 @@ $(document).ready(function() {
             basketUpdating(product_id, numb, is_delete=false);
         });
 
-        function reshowBasket(){
-            $('.dropdown-menu').addClass('show');
-        };
+
         $(document).on('click', '.delete-item', function(e) {
             e.preventDefault();
             product_id = $(this).data("product_id")
@@ -64,11 +62,10 @@ $(document).ready(function() {
 
         $(document).on('click', '.navbar-toggler', function() {
             var elements = this.getElementsByTagName('span');
-              for (var i = 0; i < elements.length; i++) {
-                    elements[i].classList.toggle("show")
-
-              }
-          });
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].classList.toggle("show")
+            }
+        });
 //modal window for modal forms
         $(function() {
         $(".login-btn").modalForm({formURL: "{% url 'accounts:login' %}"});
@@ -119,7 +116,7 @@ $(document).ready(function() {
             // Parameters has to be in square bracket '[]'
             owl.trigger('prev.owl.carousel');
         });
-
+        // form style
         $(function(){
           $("#id_contact_phone").mask("+7 999 999-9999");
         });
@@ -127,11 +124,17 @@ $(document).ready(function() {
           $("input[type='number']").inputSpinner();
         });
         // cart Dropdown menu
-        $(document).on('click', '.cartDropdown', function() {
-            var elements = this.getElementsByTagName('span');
-              for (var i = 0; i < elements.length; i++) {
-                    elements[i].classList.toggle("show")
-
-              }
-          });
+        $(document).mouseup(function (e){ // отслеживаем событие клика по веб-документу
+            e.preventDefault();
+            var blockButton = $("#cartDropdown");
+            var block = $(".cart-dropdown-menu");
+            blockButton.click(function(){
+                block.toggle();
+            });
+            // определяем элемент, к которому будем применять условия (можем указывать ID, класс либо любой другой идентификатор элемента)
+            if (!block.is(e.target) // проверка условия если клик был не по нашему блоку
+            && block.has(e.target).length === 0) { // проверка условия если клик не по его дочерним элементам
+                block.hide(); // если условия выполняются - скрываем наш элемент
+            }
+        });
 });

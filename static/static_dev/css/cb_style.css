@@ -34,10 +34,7 @@ a{color: #f28356;}
     padding: 0.3rem;
 }
 
-a:hover {
-    color: #848484;
-   /* color: #848484; */
-}
+
 .in-event-date{
     position: absolute;
     left: 15%;
@@ -106,7 +103,7 @@ a:hover {
 .btn-form:hover {
     color: #f28356;
     background-color: white;
-    border-color: #f8f9fa;
+    border-color: #f28356;
 }
 /* .btn, .form-control {
     border-radius:                    0px;
@@ -549,10 +546,12 @@ opacity: 0.3; } */
     font-size: 0.8rem;
 }
 
-.nav-item:hover{
+.nav-link:hover{
     /* background-color: red; */
-    /* border-bottom: 2px solid black; */
-    background-color: rgba(50, 50, 50, .65);
+    border-bottom: 2px solid  #f28356;
+    padding-bottom: 5px;
+
+    /* background-color: rgba(50, 50, 50, .65); */
     /* background-color: rgba(0,0,0,.03); */
 }
 #navbarCollapse a{
@@ -560,10 +559,7 @@ opacity: 0.3; } */
     font-size: 1.2rem;
     color: white;
 }
-#main_nav li a{
-        padding: 16px;
 
-}
 button:focus {
     outline: 0px dotted;
 }
@@ -580,7 +576,7 @@ button:focus {
     background-size: 100% 100%;
 }
 .navbar-toggler-close{
-    width: 1.2em;
+    width: 26px;
     height: 1.1em;
     vertical-align: middle;
     content: "";
@@ -593,6 +589,18 @@ button:focus {
     position: absolute;
     top: 29%;
     left: 45%;
+}
+.cart-dropdown-menu{
+    display: none;
+    position: absolute;
+      top: 75px;
+      right: 0;
+      z-index: 6;
+      background-color: #535251;
+      /* width: 200px;
+      height: 100px; */
+
+
 }
 .tx{
     border: 1px black; /* Параметры границы */
