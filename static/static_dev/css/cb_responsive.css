@@ -151,9 +151,9 @@
     .for-input-spinner .input-group {
         max-width: 40px;
     }
-    .form-control {
+    /* .form-control {
         padding: .175rem .35rem;
-    }
+    } */
  }
 
 /* // Large devices (desktops, less than 1200px) */

@@ -1,6 +1,11 @@
 from django.http import JsonResponse
 from .models import ProductinBasket
 # from django.shortcuts import render
+from django.contrib.messages.views import SuccessMessageMixin
+from django.urls import reverse_lazy
+from django.views import generic
+from bootstrap_modal_forms.mixins import PassRequestMixin
+from .forms import OrderForm
 
 def basket_adding(request):
     return_dict = dict()
@@ -35,7 +40,11 @@ def basket_adding(request):
     print(return_dict)
     return JsonResponse(return_dict)
 
-
+class OrderCreateView(PassRequestMixin, SuccessMessageMixin, generic.CreateView):
+    template_name = 'orders/create_order.html'
+    form_class = OrderForm
+    success_message = 'Ваша заявка принята, вскоре мы вам перезвоним'
+    success_url = reverse_lazy('landing')
 # def checkout(request):
 #     products_in_basket = ProductinBasket.objects.filter(pb_session_key=session_key, pb_is_active=True)
 #     return render(request, 'checkout/checkout.html', locals())

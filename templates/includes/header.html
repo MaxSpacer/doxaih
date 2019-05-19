@@ -15,7 +15,7 @@
     </button>
     <div class="collapse navbar-collapse order-6 order-md-3" id="navbarCollapse">
         <nav id="main_nav" class="w-100">
-            <form class="formsfor invisible" action="{% url 'basket_adding' %}" method="">
+            <form class="formsfor invisible" action="{% url 'orders:basket_adding' %}" method="">
                 {% csrf_token %}
             </form>
             <ul class="nav justify-content-center flex-column flex-md-row">
@@ -48,8 +48,8 @@
         <a class="d-block" href="tel:+7 (499) 254-11-03"><i class="fas fa-phone fa-flip-horizontal fa-fw"></i><span class="d-none d-md-inline">+7 (499) 254-11-03</span></a>
         <div class="d-none d-md-block">Приём заказов с 09:00 до 20:30</div>
     </div>
-    <div class="order-md-5 position-relative px-2" id="cartDropdown">
-        <img src="{% static 'img/dish.png' %}" class="img-fluid cart-dish " alt="">
+    <div class="order-md-5 position-relative mx-2 p-0" id="cartDropdown">
+        <img src="{% static 'img/dish.png' %}" class="img-fluid cart-dish" alt="">
         <span id="basket_total_nmb">{{ products_total_nmb }}</span>
     </div>
     <div class="cart-dropdown-menu bg-menu text-nowrap mx-3 mx-md-0">
@@ -60,12 +60,12 @@
                         <td class="text-wrap">{{ item.pb_product }}</td>
                         <td>{{ item.pb_qty }} шт.</td>
                         <td>по {{ item.pb_price_per_item }} руб.</td>
-                        <td><a class="delete-item" href="{% url 'basket_adding' %}" data-product_id="{{ item.id }}">X</a></td>
+                        <td><a class="delete-item" href="{% url 'orders:basket_adding' %}" data-product_id="{{ item.id }}">X</a></td>
                     </tr>
                     {% endfor %}
-
                 </tbody>
             </table>
+            <div type="button" class="create-order">etyerery</div>
     </div>
 </nav>
 

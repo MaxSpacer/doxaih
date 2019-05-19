@@ -15,9 +15,9 @@
                 {% endfor %}
             </div>
             {% for field in form %}
-            <div class="col-12 col-sm-6">
-                <label class="" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                {% render_field field class="form-control bg-likwid pl-0" placeholder='' %}
+            <div class="col-12 col-sm-6 my-1">
+                <label class="d-none" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {% render_field field class="form-control" placeholder=field.label %}
                 <div class="{% if field.errors %} invalid{% endif %}">
                     {% for error in field.errors %}
                     <p class="help-block text-warning">{{ error }}</p>

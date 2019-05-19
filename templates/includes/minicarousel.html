@@ -21,7 +21,7 @@
                                         <h5 class="card-title text-center m-0 p-2">{{ item.product.name }}</h5>
                                     </div>
                                     <div class="card-footer mt-auto p-0">
-                                        <form class="formBuyProduct bg-white text-center" action="{% url 'basket_adding' %}">{% csrf_token %}
+                                        <form class="formBuyProduct bg-white text-center" action="{% url 'orders:basket_adding' %}">{% csrf_token %}
                                             <div class="row justify-content-center">
                                                 <div class="col-4">
                                                     <div class="card__info text-nowrap">{{ item.product.weight }} гр.</div>
@@ -34,10 +34,12 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button type="submit" class="inBuyBtn btn btn-form flex-wrap my-2" data-product_id="{{ item.product.id }}" data-product_name="{{ item.product.name }}"
-                                            data-product_price="{{ item.product.price }}">
-                                            В корзину.
-                                        </button>
+                                            <button type="submit" class="inBuyBtn btn btn-form flex-wrap my-2"
+                                                data-product_id="{{ item.product.id }}"
+                                                data-product_name="{{ item.product.name }}"
+                                                data-product_price="{{ item.product.price }}">
+                                                В корзину.
+                                            </button>
                                     </form>
                                 </div>
                                 </div>

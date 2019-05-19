@@ -16,9 +16,9 @@ from django.shortcuts import get_object_or_404
 def send_mail_on_callback(sender, instance, created, **kwargs):
     if created:
         context = {
-		    'contact_name': instance.contact_name,
+		    'contact_name': instance.customer_name,
 		    'callme_number': instance.id,
-		    'contact_phone': instance.contact_phone,
+		    'contact_phone': instance.customer_phone,
 		}
         subject = 'Заказ звонка № call-%s' % instance.id
         html_message = render_to_string('mail_templates/mail_callme_template.html', context)
@@ -48,10 +48,10 @@ def send_mail_on_callback(sender, instance, created, **kwargs):
 def send_mail_main_form(sender, instance, created, **kwargs):
     if created:
         context = {
-		    'contact_name': instance.contact_name,
+		    'contact_name': instance.customer_name,
 		    'main_form_number': instance.id,
-		    'contact_phone': instance.contact_phone,
-		    'contact_email': instance.contact_email,
+		    'contact_phone': instance.customer_phone,
+		    'contact_email': instance.customer_email,
 		}
         subject = 'Новый контакт с главной страницы № MAIN-%s' % instance.id
         html_message = render_to_string('mail_templates/mail_main_form.html', context)

@@ -20,7 +20,7 @@ body {
 }
 a{color: #f28356;}
 .bg-menu{
-    background-color: rgba(0,0,0,.65);
+    background-color: #535251;
 }
 .bg-color-main{
     background-color: #4a4a54;
@@ -30,6 +30,7 @@ a{color: #f28356;}
     color: #fff;
     background-color: rgba(57, 57, 57, 1);
 }
+
 .modal-body {
     padding: 0.3rem;
 }
@@ -131,24 +132,25 @@ a{color: #f28356;}
 }
 .form-control {
     height: auto;
-    padding: 2px;
+    padding: 3px 10px;
     border: 0;
     min-width: 2rem;
+
   /* border-bottom: 1px;
   border-color: white; */
    }
    /* Цвет подсказывающего текста в форме */
 .form-control::-moz-placeholder {
-       color: white;
-       opacity: 0.3;
+       color: black;
+       opacity: 0.4;
       }
-.form-control::-webkit-input-placeholder { color: white;
+.form-control::-webkit-input-placeholder { color: black;
 opacity: 0.3; }
-.form-control:-ms-input-placeholder { color: white;
+.form-control:-ms-input-placeholder { color: black;
 opacity: 0.3; }
-.form-control::-ms-input-placeholder { color: white;
+.form-control::-ms-input-placeholder { color: black;
 opacity: 0.3; }
-.form-control::placeholder { color: white;
+.form-control::placeholder { color: black;
 opacity: 0.3; } */
 
 
@@ -260,19 +262,14 @@ opacity: 0.3; } */
 
 /*  main promo section END
 ========================================== */
-
+/*
 .modal-content{ background-color: rgba(249, 217, 106, 1); }
-/* .modal-header p { font-size: 1.2em;} */
 .modal-header .close:hover {
     background-color: white;
 }
-/* .modal-content .close{ padding: 5px; } */
 .modal-content .modal-header{
     background-color: rgba(249, 217, 106, 1); }
-     /* background-color: rgba(234, 179, 163, 1); */
-     /* padding: 7px; */
- }
-
+} */
 
 
 .btn-event, .edu-btn{
@@ -585,10 +582,14 @@ button:focus {
         /* background-size: auto; */
     background-size: 100% 100%;
 }
+.cart-dish{
+    cursor: pointer;
+}
 #basket_total_nmb {
     position: absolute;
-    top: 29%;
-    left: 45%;
+    top: 50%;  /* position the top  edge of the element at the middle of the parent */
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+    transform: translate(-50%, -50%); /* This is a shorthand of translateX(-50%) and translateY(-50%) */
 }
 .cart-dropdown-menu{
     display: none;
@@ -596,7 +597,7 @@ button:focus {
       top: 75px;
       right: 0;
       z-index: 6;
-      background-color: #535251;
+      /* background-color: #535251; */
       /* width: 200px;
       height: 100px; */
 
@@ -726,12 +727,7 @@ button:focus {
           background-size: 300px; */
 
     }
-.footer a,p{
-       color: #6c757d;
-       font-size: 0.9em;
-       /* padding: 4px; */
-        z-index: 1;
-    }
+
 .footer tr{
        font-size: 1.4em;
     }

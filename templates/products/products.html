@@ -32,7 +32,7 @@
                             </div>
                         <!-- </a> -->
                             <div class="card-footer p-0">
-                                <form class="formBuyProduct bg-white text-center" action="{% url 'basket_adding' %}">{% csrf_token %}
+                                <form class="formBuyProduct bg-white text-center" action="{% url 'orders:basket_adding' %}">{% csrf_token %}
                                     <div class="row justify-content-around">
                                         <div class="col-3 p-2">
                                             <div class="card__info">{{ product.weight }} гр.</div>

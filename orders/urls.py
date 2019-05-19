@@ -16,10 +16,10 @@ Including another URLconf
 from django.urls import re_path, path
 # from products import views
 from orders import views
-
+app_name='orders'
 
 urlpatterns = [
-    path('', views.basket_adding, name='basket_adding'),
-    # path('', views.checkout, name='checkout'),
+    path('basket_adding/', views.basket_adding, name='basket_adding'),
+    path('create_order/', views.OrderCreateView.as_view(), name='create_order'),
     # re_path(r'(?P<product_id>[0-9])/$', views.product, name='product_n'),
 ]

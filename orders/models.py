@@ -2,7 +2,7 @@ from django.db import models
 from django.db.models.signals import post_save
 from products.models import Product
 from deployutils.main import disable_for_loaddata
-
+from phonenumber_field.modelfields import PhoneNumberField
 class Status_order(models.Model):
     status_name = models.CharField(max_length=24, blank=True, null=True, default=None)
     is_active = models.BooleanField(default=True)
@@ -18,11 +18,11 @@ class Status_order(models.Model):
 
 # Create your models here.
 class Order(models.Model):
-    customer_name = models.CharField(max_length=64, blank=True, null=True, default=None)
-    customer_email = models.EmailField(max_length=64, blank=True, null=True, default=None)
-    customer_phone = models.CharField(max_length=48, blank=True, null=True, default=None)
-    customer_adress = models.CharField(max_length=128, blank=True, null=True, default=None)
-    customer_comments = models.TextField(blank=True, null=True, default=None)
+    customer_name = models.CharField(verbose_name="ваше имя", max_length=64, blank=True, null=True, default=None)
+    customer_email = models.EmailField(verbose_name="ваш e-mail", max_length=64, blank=True, null=True, default=None)
+    customer_phone = PhoneNumberField(verbose_name="ваш телефон", blank=True, null=True, default=None)
+    customer_adress = models.TextField(verbose_name="адрес доставки", blank=True, null=True, default=None)
+    customer_comments = models.TextField(verbose_name="комментарии к заказу", blank=True, null=True, default=None)
     total_price_order = models.DecimalField(max_digits=10, decimal_places=2, default=0) #total_price in order for all products
     status = models.ForeignKey(Status_order, on_delete=models.SET_DEFAULT, default=1)
     created = models.DateTimeField(auto_now_add=True , auto_now=False)
@@ -93,7 +93,8 @@ class ProductinBasket(models.Model):
         return "%s" % self.pb_product
 
     def save(self, *args, **kwargs):
-        price_per_item = self.pb_product.price
-        self.pb_price_per_item = price_per_item
-        self.pb_total_price = int(self.pb_qty) * self.pb_price_per_item
+        if self.pb_product.price:
+            price_per_item = self.pb_product.price
+            self.pb_price_per_item = price_per_item
+            self.pb_total_price = int(self.pb_qty) * self.pb_price_per_item
         super(ProductinBasket, self).save(*args, **kwargs)
