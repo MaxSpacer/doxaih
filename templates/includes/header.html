@@ -13,6 +13,7 @@
         <span class="navbar-toggler-img show"></span>
         <span class="navbar-toggler-close"></span>
     </button>
+    
     <div class="collapse navbar-collapse order-6 order-md-3" id="navbarCollapse">
         <nav id="main_nav" class="w-100">
             <form class="formsfor invisible" action="{% url 'orders:basket_adding' %}" method="">
@@ -52,20 +53,22 @@
         <img src="{% static 'img/dish.png' %}" class="img-fluid cart-dish" alt="">
         <span id="basket_total_nmb">{{ products_total_nmb }}</span>
     </div>
-    <div class="cart-dropdown-menu bg-menu text-nowrap mx-2 mx-md-0">
+    <div class="cart-dropdown-menu bg-menu text-nowrap mx-2 mx-md-0 text-center">
             <table id="table-basket" class="table table-hover m-0">
                 <tbody >
                     {% for item in products_in_basket %}
                     <tr>
                         <td class="text-wrap">{{ item.pb_product }}</td>
                         <td>{{ item.pb_qty }} шт.</td>
-                        <td>по {{ item.pb_price_per_item }} руб.</td>
+                        <td>по {{ item.pb_price_per_item|floatformat:0 }} руб.</td>
                         <td><a class="delete-item" href="{% url 'orders:basket_adding' %}" data-product_id="{{ item.id }}">X</a></td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
-            <div type="button" class="create-order ml-auto btn btn-form">К заказу</div>
+            {% if products_total_nmb != 0 %}
+            <div type="button" class="create-order btn btn-form m-2">Оформить заказ</div>
+            {% endif%}
     </div>
 </nav>
 

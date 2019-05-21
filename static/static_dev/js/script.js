@@ -123,5 +123,6 @@ $(document).ready(function() {
         $("input[type='tel']").mask("+7 999 999-9999");
         $("#modal").on('shown.bs.modal', function(){
                 $("input[type='tel']").mask("+7 999 999-9999");
-          });
+        });
+        $('#modal_message').modal({show:true});
 });

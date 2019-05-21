@@ -16,9 +16,3 @@ def getting_basket_info(request):
     popular_products = ProductImage.objects.filter(is_active=True, is_main=True, product__is_active=True, product__popular = True)
     print(popular_products)
     return locals()
-
-def getting_popul_goods(request):
-    session_key = request.session.session_key
-    if not session_key:
-        request.session.cycle_key()
-    return locals()

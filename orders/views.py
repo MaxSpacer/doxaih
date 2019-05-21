@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 from bootstrap_modal_forms.mixins import PassRequestMixin
 from .forms import OrderForm
-
+from django.contrib import messages
 def basket_adding(request):
     return_dict = dict()
     session_key = request.session.session_key
@@ -20,6 +20,7 @@ def basket_adding(request):
         ProductinBasket.objects.filter(id=product_id).update(pb_is_active=False)
     else:
         new_product, created = ProductinBasket.objects.get_or_create(pb_session_key=session_key, pb_product_id=product_id, pb_is_active=True, defaults={"pb_qty": numb})
+        messages.add_message(request, messages.INFO, 'Товар в корзине')
         if not created:
             print ("not created")
             new_product.pb_qty += int(numb)

@@ -582,7 +582,7 @@ button:focus {
         /* background-size: auto; */
     background-size: 100% 100%;
 }
-.cart-dish{
+.cart-dish,#basket_total_nmb{
     cursor: pointer;
 }
 #basket_total_nmb {

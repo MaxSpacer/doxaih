@@ -86,7 +86,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 # 'doxaih.context_processors.getting_now_date',
                 'doxaih.context_processors.getting_basket_info',
-                'doxaih.context_processors.getting_popul_goods',
+                # 'doxaih.context_processors.getting_popul_goods',
             ],
         },
     },
@@ -124,7 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 LOGIN_REDIRECT_URL = '/'
