@@ -56,7 +56,7 @@ $(document).ready(function() {
                         $('#basket_total_nmb').text(" "+data.products_total_nmb+" ");
                         $('#table-basket tbody').html("");
                         $.each(data.products, function(k, v){
-                            $('#table-basket').append('<tr><td>'+v.product_name+'</ td><td>'+v.numb+' шт.</td><td> по '+v.price_per_item+' руб.</ td><td><a class="delete-item" href="#" data-product_id="'+v.id+'">X</a></td></ tr>');
+                            $('#table-basket').append('<tr><td class="text-wrap">'+v.product_name+'</ td><td>'+v.numb+' шт.</td><td> по '+v.price_per_item+' руб.</ td><td><a class="delete-item" href="#" data-product_id="'+v.id+'">X</a></td></ tr>');
                         });
                     };
                },
@@ -85,9 +85,9 @@ $(document).ready(function() {
             basketUpdating(product_id, numb, is_delete=true)
         });
 
-        $('#myModal').on('shown.bs.modal', function () {
-          $('#myInput').trigger('focus')
-        })
+        // $('#myModal').on('shown.bs.modal', function () {
+        //   $('#myInput').trigger('focus')
+        // })
 
         $(document).on('click', '.navbar-toggler', function() {
             var elements = this.getElementsByTagName('span');
@@ -105,27 +105,23 @@ $(document).ready(function() {
         $(function(){
           $("input[type='number']").inputSpinner();
         });
+
         // cart Dropdown menu
         $(document).mouseup(function (e){ // отслеживаем событие клика по веб-документу
             e.preventDefault();
-            var blockButton = $("#cartDropdown");
-            var block = $(".cart-dropdown-menu");
-            blockButton.click(function(){
-                block.toggle();
+            $( "#cartDropdown" ).click(function() {
+                $(".cart-dropdown-menu").toggle();
             });
-            // определяем элемент, к которому будем применять условия (можем указывать ID, класс либо любой другой идентификатор элемента)
+            var block = $(".cart-dropdown-menu");
             if (!block.is(e.target) // проверка условия если клик был не по нашему блоку
             && block.has(e.target).length === 0) { // проверка условия если клик не по его дочерним элементам
                 block.hide(); // если условия выполняются - скрываем наш элемент
             }
         });
+
         // form style
         $("input[type='tel']").mask("+7 999 999-9999");
         $("#modal").on('shown.bs.modal', function(){
-            $(function(){
                 $("input[type='tel']").mask("+7 999 999-9999");
-                // $("#id_customer_name").parent("div").css("min-width","100%");
-            });
-
           });
 });

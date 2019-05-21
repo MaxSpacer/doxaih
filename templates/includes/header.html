@@ -52,7 +52,7 @@
         <img src="{% static 'img/dish.png' %}" class="img-fluid cart-dish" alt="">
         <span id="basket_total_nmb">{{ products_total_nmb }}</span>
     </div>
-    <div class="cart-dropdown-menu bg-menu text-nowrap mx-3 mx-md-0">
+    <div class="cart-dropdown-menu bg-menu text-nowrap mx-2 mx-md-0">
             <table id="table-basket" class="table table-hover m-0">
                 <tbody >
                     {% for item in products_in_basket %}
@@ -65,7 +65,7 @@
                     {% endfor %}
                 </tbody>
             </table>
-            <div type="button" class="create-order">etyerery</div>
+            <div type="button" class="create-order ml-auto btn btn-form">К заказу</div>
     </div>
 </nav>
 

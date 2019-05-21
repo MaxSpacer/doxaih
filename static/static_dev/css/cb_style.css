@@ -600,19 +600,13 @@ button:focus {
       /* background-color: #535251; */
       /* width: 200px;
       height: 100px; */
-
-
 }
-.tx{
-    border: 1px black; /* Параметры границы */
-    background: black; /* Цвет фона */
-
+.delete-item{
+    font-size: 1.5rem;
 }
-
-
 .table td {
     vertical-align: middle;
-    padding: .45rem;
+    padding: .55rem;
 }
 
 .input[type="number"] {
