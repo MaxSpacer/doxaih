@@ -35,6 +35,12 @@ a{color: #f28356;}
     padding: 0.3rem;
 }
 
+.d-no {
+    display: none;
+}
+.display{
+    display: block;
+}
 
 .in-event-date{
     position: absolute;

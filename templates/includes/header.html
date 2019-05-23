@@ -13,7 +13,7 @@
         <span class="navbar-toggler-img show"></span>
         <span class="navbar-toggler-close"></span>
     </button>
-    
+
     <div class="collapse navbar-collapse order-6 order-md-3" id="navbarCollapse">
         <nav id="main_nav" class="w-100">
             <form class="formsfor invisible" action="{% url 'orders:basket_adding' %}" method="">
@@ -66,9 +66,7 @@
                     {% endfor %}
                 </tbody>
             </table>
-            {% if products_total_nmb != 0 %}
-            <div type="button" class="create-order btn btn-form m-2">Оформить заказ</div>
-            {% endif%}
+            <div type="button" class="create-order btn btn-form m-2 {% if products_total_nmb == 0 %}d-no{% endif%}">Оформить заказ</div>
     </div>
 </nav>
 

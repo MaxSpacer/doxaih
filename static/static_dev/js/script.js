@@ -1,5 +1,6 @@
 
 $(document).ready(function() {
+
         //minicarousel owl buttons
         var owl = $('.owl-carousel');
         owl.owlCarousel({
@@ -35,7 +36,7 @@ $(document).ready(function() {
         var form = $('.formBuyProduct');
         var form_for_all_pages = $('.formsfor');
         function basketUpdating(product_id, numb, is_delete){
-            var data  = {};
+            var data = {}
             data.product_id = product_id;
             data.numb = numb;
             var csrf_token = $('.formsfor [name="csrfmiddlewaretoken"]').val();
@@ -45,19 +46,28 @@ $(document).ready(function() {
                 data["is_delete"] = true;
                 url = form_for_all_pages.attr("action");
             }
-               console.log(data);
             $.ajax({
                url: url,
                type: "POST",
                data: data,
                cache: true,
-               success: function (data) {console.log(data);
-                   if (data.products_total_nmb || data.products_total_nmb == 0){
-                        $('#basket_total_nmb').text(" "+data.products_total_nmb+" ");
-                        $('#table-basket tbody').html("");
-                        $.each(data.products, function(k, v){
-                            $('#table-basket').append('<tr><td class="text-wrap">'+v.product_name+'</ td><td>'+v.numb+' шт.</td><td> по '+v.price_per_item+' руб.</ td><td><a class="delete-item" href="#" data-product_id="'+v.id+'">X</a></td></ tr>');
+               success: function (data) {
+                    if (!data.is_delete){
+                        $.each(data.messages, function(k, v){
+                            $('.modal-content').html("");
+                            $('.modal-content').append('<tr><td class="text-wrap">'+v.message+'</td><td>');
+                            $('#modal').modal({show:true});
                         });
+                    };
+                    $('#basket_total_nmb').text(" "+data.products_total_nmb+" ");
+                    $('#table-basket tbody').html("");
+                    $.each(data.products, function(k, v){
+                        $('#table-basket').append('<tr><td class="text-wrap">'+v.product_name+'</ td><td>'+v.numb+' шт.</td><td> по '+v.price_per_item+' руб.</ td><td><a class="delete-item" href="#" data-product_id="'+v.id+'">X</a></td></ tr>');
+                    });
+                    if (data.products_total_nmb > 0) {
+                        $(".create-order").removeClass("d-no");
+                    } else {
+                        $(".create-order").addClass("d-no");
                     };
                },
                error: function(){
@@ -65,7 +75,6 @@ $(document).ready(function() {
                },
             });
         };
-
         form.on('submit', function(e){
             e.preventDefault();
             var clikedForm = $(this).find('.inBuyProduct');
@@ -76,7 +85,6 @@ $(document).ready(function() {
             var product_price = in_buy_btn.data("product_price");
             basketUpdating(product_id, numb, is_delete=false);
         });
-
 
         $(document).on('click', '.delete-item', function(e) {
             e.preventDefault();
@@ -95,8 +103,6 @@ $(document).ready(function() {
                 elements[i].classList.toggle("show")
             }
         });
-        //modal error window
-        // $('#modal_message').modal({show:true});
         //placeholders for callback's form
         // document.getElementById('id_customer_name').placeholder = 'Александр';
         // document.getElementById('id_customer_phone').placeholder = '+7 (765)256-12-15';
@@ -124,5 +130,4 @@ $(document).ready(function() {
         $("#modal").on('shown.bs.modal', function(){
                 $("input[type='tel']").mask("+7 999 999-9999");
         });
-        $('#modal_message').modal({show:true});
 });
