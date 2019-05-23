@@ -12,12 +12,12 @@
     			<!-- Messages -->
     			<div class="message">
     				<div style="border-radius:0;" {% if message.tags %} class="alert alert-icon alert-{{ message.tags }} alert-dismissible mb-0 text-left" role="alert" {% endif %}>
-                        <div id="#addInCart">
+                        <!-- <div id="#addInCart"> -->
                             {% if message %}
                             {{ message | safe }}
                             {% else %}Товар к корзине
                             {% endif %}
-                        </div>
+                        <!-- </div> -->
     					<button type="button" class="close btn-dark" data-dismiss="modal" aria-label="Close">
     				   		<span aria-hidden="true">&times;</span>
     				 	</button>
