@@ -25,31 +25,36 @@
 
   <!-- <body> -->
     <!-- <div id="container" class="contain"> -->
-    <body>
+    <body class="">
     <!-- <body class="d-flex flex-column justify-content-center h-100"> -->
 
     <!-- social links from yandex -->
     <!-- <script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
     <script src="//yastatic.net/share2/share.js"></script> -->
     <!-- modal window for forms -->
-    {% include "_modal.html" %}
 	<!-- message_modal -->
 	<!-- header -->
     {% include "includes/header.html" %}
+
+    <!-- {#% if request.path != '/' %#} -->
+    <!-- <main role="main" class="main pad"> -->
+    <!-- {#% else %#} -->
+    <main role="main" class="main margin">
+    <!-- {#% endif %#} -->
+
+    {% include "_modal.html" %}
+    {% block comment %}
     {% include "includes/message_modal.html" %}
-
-    {% if request.path != '/' %}
-    <main role="main" class="main pad">
-    {% else %}
-    <main role="main" class="main">
-    {% endif %}
-
+    {% endblock comment %}
     {% block content %}
     {% endblock content %}
         </main>
 
 <!-- footer -->
-    {% include "includes/footer.html" %}
+    <!-- <div class="d-flex flex-column justify-content-end align-items-end h-100"> -->
+        {% include "includes/footer.html" %}
+
+    <!-- </div> -->
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->

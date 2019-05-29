@@ -1,17 +1,27 @@
 
 $(document).ready(function() {
+
+
         // cart Dropdown menu
-        $(document).mouseup(function (e){ // отслеживаем событие клика по веб-документу
-            e.preventDefault();
-            $( "#cartDropdown" ).click(function() {
-                $(".cart-dropdown-menu").toggle();
-            });
-            var block = $(".cart-dropdown-menu");
-            if (!block.is(e.target) // проверка условия если клик был не по нашему блоку
-            && block.has(e.target).length === 0) { // проверка условия если клик не по его дочерним элементам
-                block.hide(); // если условия выполняются - скрываем наш элемент
-            }
-        });
+        // $(document).mouseup(function (e){ // отслеживаем событие клика по веб-документу
+        //     e.preventDefault();
+        //     // $( "#cartDropdown" ).click(function() {
+        //     //     $(".cart-dropdown-menu").toggle();
+        //     // });
+        //
+        //     var block = $(".cart-dropdown-menu");
+        //     var block2 = $("#cartDropdown");
+        //     if (block2.is(e.target)) {
+        //         console.log('wdwd');
+        //         block.toggle();
+        //
+        //     } else {
+        //         if (!block.is(e.target)// проверка условия если клик был не по нашему блоку
+        //         && block.has(e.target).length === 0) { // проверка условия если клик не по его дочерним элементам
+        //             block.hide() // если условия выполняются - скрываем наш элемент
+        //         };
+        //     };
+        // });
         //minicarousel owl buttons
         var owl = $('.owl-carousel');
         owl.owlCarousel({
@@ -67,13 +77,19 @@ $(document).ready(function() {
                         $.each(data.messages, function(k, v){
                             $('.modal-content').html("");
                             $('.modal-content').append('<h4 style="border-radius:0;" class="alert alert-icon alert-dismissible btn-form mb-0 text-center" role="alert">'+v.message+'</h4>');
-                            $('#modal').modal({show:true});
+                            $('#modal').modal('show');
+                            setTimeout(function(){
+                                    $("#modal").modal('toggle');
+                                }, 700);
                         });
+                    } else {
+                        $(".dropdown-menu").addClass("show");
                     };
                     $('#basket_total_nmb').text(" "+data.products_total_nmb+" ");
-                    $('#table-basket tbody').html("");
+                    $('.tables tbody').html("");
                     $.each(data.products, function(k, v){
-                        $('#table-basket').append('<tr><td class="text-wrap">'+v.product_name+'</ td><td>'+v.numb+' шт.</td><td> по '+v.price_per_item+' руб.</ td><td><a class="delete-item" href="#" data-product_id="'+v.id+'">X</a></td></ tr>');
+                        var myTrunc = Math.trunc( v.price_per_item );
+                        $('.tables').append('<tr><td class="text-wrap text-left">'+v.product_name+'</ td><td>'+v.numb+' шт.</td><td> по '+myTrunc+' руб.</ td><td><a class="delete-item" href="#" data-product_id="'+v.id+'">X</a></td></ tr>');
                     });
                     if (data.products_total_nmb > 0) {
                         $(".create-order").removeClass("d-no");
@@ -119,15 +135,10 @@ $(document).ready(function() {
         // document.getElementById('id_customer_phone').placeholder = '+7 (765)256-12-15';
 
 
-        $(function(){
-          $("input[type='number']").inputSpinner();
-        });
-
-
-
         // form style
         $("input[type='tel']").mask("+7 999 999-9999");
         $("#modal").on('shown.bs.modal', function(){
                 $("input[type='tel']").mask("+7 999 999-9999");
         });
+        $("input[type='number']").inputSpinner();
 });

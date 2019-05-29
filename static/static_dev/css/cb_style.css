@@ -9,7 +9,7 @@ body {
     background-repeat: no-repeat;
     color: black; */
     /* max-height: 50%; */
-    /* height: 100vh; */
+    min-height: 100%;
 
     font-family: 'Gotham Pro Light';
     /* font-family: "Courier New"; */
@@ -597,13 +597,20 @@ button:focus {
     left: 50%; /* position the left edge of the element at the middle of the parent */
     transform: translate(-50%, -50%); /* This is a shorthand of translateX(-50%) and translateY(-50%) */
 }
-.cart-dropdown-menu{
+ .dropdown-toggle::after {
     display: none;
-    position: absolute;
-      top: 75px;
-      right: 0;
-      z-index: 6;
+}
+.dropdown-menu{
+    display: none;
+    left: auto;
+    right: 0%;
       /* background-color: #535251; */
+      /* width: 200px;
+      height: 100px; */
+}
+.dropdown-menu .table td{
+        border-bottom: 1px solid #535251;
+        /* background-color: #535251; */
       /* width: 200px;
       height: 100px; */
 }
@@ -613,6 +620,7 @@ button:focus {
 .table td {
     vertical-align: middle;
     padding: .55rem;
+    border: 0;
 }
 
 .input[type="number"] {
@@ -642,7 +650,9 @@ button:focus {
 .about-main{
     background-color:#f7f7f7;
 }
-
+.margin {
+    margin-top: 3.5rem;
+}
 .img-f{
     max-height: 450px;
     /* min-height: 100%; */
@@ -725,7 +735,10 @@ button:focus {
           background-position: center;
           background-repeat: no-repeat;
           background-size: 300px; */
-
+          /* position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%; */
     }
 
 .footer tr{

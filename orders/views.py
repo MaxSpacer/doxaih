@@ -7,6 +7,8 @@ from django.views import generic
 from bootstrap_modal_forms.mixins import PassRequestMixin
 from .forms import OrderForm
 from django.contrib import messages
+
+
 def basket_adding(request):
     return_dict = dict()
     session_key = request.session.session_key
@@ -48,7 +50,6 @@ def basket_adding(request):
             "message": message.message,
             "extra_tags": message.tags,
     })
-    # print(return_dict)
     return JsonResponse(return_dict)
 
 
@@ -56,7 +57,21 @@ class OrderCreateView(PassRequestMixin, SuccessMessageMixin, generic.CreateView)
     template_name = 'orders/create_order.html'
     form_class = OrderForm
     success_message = 'Ваша заявка принята, вскоре мы вам перезвоним'
-    success_url = reverse_lazy('landing')
+    success_url = reverse_lazy('landing:landing')
+
+    # def get_success_url(self):
+    #     investions_pk=self.kwargs['pk']
+    #     return reverse_lazy('investions:investion_n', kwargs={'pk': investions_pk})
+    #
+    # def form_valid(self, form):
+    #     if 'referer' in self.request.session:
+    #         referer_id = self.request.session['referer']
+    #         user = User.objects.get(pk=referer_id)
+    #         # form.instance.referal = user.profile
+    #         form.instance.referal = user.profile
+    #     investion = get_object_or_404(Investion,pk=self.kwargs['pk'])
+    #     form.instance.investion = investion
+    #     return super(MainFormView, self).form_valid(form)
 # def checkout(request):
 #     products_in_basket = ProductinBasket.objects.filter(pb_session_key=session_key, pb_is_active=True)
 #     return render(request, 'checkout/checkout.html', locals())

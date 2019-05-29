@@ -4,13 +4,13 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
 import nested_admin
 
-class EducationCategoryAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in EducationCategory._meta.fields]
-admin.site.register(EducationCategory, EducationCategoryAdmin)
-
-class EducationFormatAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in EducationFormat._meta.fields]
-admin.site.register(EducationFormat, EducationFormatAdmin)
+# class EducationCategoryAdmin(admin.ModelAdmin):
+#     list_display = [field.name for field in EducationCategory._meta.fields]
+# admin.site.register(EducationCategory, EducationCategoryAdmin)
+#
+# class EducationFormatAdmin(admin.ModelAdmin):
+#     list_display = [field.name for field in EducationFormat._meta.fields]
+# admin.site.register(EducationFormat, EducationFormatAdmin)
 
 
 # class EducationResultPointInline(admin.TabularInline):
@@ -26,18 +26,18 @@ admin.site.register(EducationFormat, EducationFormatAdmin)
 #     inlines = [EducationPlanPointInline,EducationResultPointInline,]
 
 
-class EducationPlanPointListInline(nested_admin.NestedTabularInline):
-    model = EducationPlanPointList
-
-class EducationPlanPointInline(nested_admin.NestedTabularInline):
-    model = EducationPlanPoint
-    inlines = [EducationPlanPointListInline,]
-
-class EducationAdmin(nested_admin.NestedModelAdmin):
-    list_display = [field.name for field in Education._meta.fields]
-    list_display_links = ('name','id')
-    inlines = [EducationPlanPointInline,]
-admin.site.register(Education, EducationAdmin)
+# class EducationPlanPointListInline(nested_admin.NestedTabularInline):
+#     model = EducationPlanPointList
+#
+# class EducationPlanPointInline(nested_admin.NestedTabularInline):
+#     model = EducationPlanPoint
+#     inlines = [EducationPlanPointListInline,]
+#
+# class EducationAdmin(nested_admin.NestedModelAdmin):
+#     list_display = [field.name for field in Education._meta.fields]
+#     list_display_links = ('name','id')
+#     inlines = [EducationPlanPointInline,]
+# admin.site.register(Education, EducationAdmin)
 
 
 

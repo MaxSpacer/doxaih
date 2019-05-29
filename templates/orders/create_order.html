@@ -11,6 +11,20 @@
   </div>
 
   <div class="modal-body">
+      <div class="text-light">
+          <table id="tables" class="tables table table-hover m-0">
+              <tbody >
+                  {% for item in products_in_basket %}
+                  <tr>
+                      <td class="text-wrap text-left">{{ item.pb_product }}</td>
+                      <td>{{ item.pb_qty }} шт.</td>
+                      <td>по {{ item.pb_price_per_item|floatformat:0 }} руб.</td>
+                      <td><a class="delete-item" href="{% url 'orders:basket_adding' %}" data-product_id="{{ item.id }}">X</a></td>
+                  </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+      </div>
       <div class="form-row justify-content-center">
           <div class="{% if form.non_field_errors %}invalid{% endif %} mb-2">
               {% for error in form.non_field_errors %}

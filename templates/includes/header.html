@@ -1,6 +1,6 @@
 {% block header %}
 {% load static %}
-<nav class="navbar navbar-expand-md bg-menu p-1 text-light">
+<nav class="navbar navbar-expand-md bg-menu p-1 text-light fixed-top">
     <div class="navbar-brand text-nowrap m-0 p-1">
         <img class="" src="{% static 'img/dishes2.png' %}" alt="">
     </div>
@@ -26,11 +26,8 @@
                 <li class="nav-item {% if request.path == '/aboutus/' %} active{% endif %}">
                     <a class="nav-link text-nowrap" href="/aboutus">Доставка</a>
                 </li>
-                <li class="nav-item {% if '/educations/' in request.path %} active{% endif %}">
-                    <a class="nav-link" href="/educations">Кафе</a>
-                </li>
-                <li class="nav-item {% if '/educations/' in request.path %} active{% endif %}">
-                    <a class="nav-link" href="/educations">Контакты</a>
+                <li class="nav-item {% if '/contacts/' in request.path %} active{% endif %}">
+                    <a class="nav-link" href="/contacts">Контакты</a>
                 </li>
                 <li class="text-white py-3 px-5 d-md-none">
                     <i class="fas fa-phone fa-flip-horizontal"></i>
@@ -49,16 +46,16 @@
         <a class="d-block" href="tel:+7 (499) 254-11-03"><i class="fas fa-phone fa-flip-horizontal fa-fw"></i><span class="d-none d-md-inline">+7 (499) 254-11-03</span></a>
         <div class="d-none d-md-block">Приём заказов с 09:00 до 20:30</div>
     </div>
-    <div class="order-md-5 position-relative mx-2 p-0" id="cartDropdown">
+    <div class="order-md-5 position-relative mx-2 p-0 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" id="cartDropdown">
         <img src="{% static 'img/dish.png' %}" class="img-fluid cart-dish" alt="">
         <span id="basket_total_nmb">{{ products_total_nmb }}</span>
     </div>
-    <div class="cart-dropdown-menu bg-menu text-nowrap mx-2 mx-md-0 text-center">
-            <table id="table-basket" class="table table-hover m-0">
+    <div class="dropdown-menu bg-menu text-nowrap mx-2 mx-md-0 text-light p-0 border-0 text-center" aria-labelledby="cartDropdown">
+            <table id="table-basket" class="table tables table-hover m-0">
                 <tbody >
                     {% for item in products_in_basket %}
                     <tr>
-                        <td class="text-wrap">{{ item.pb_product }}</td>
+                        <td class="text-wrap text-left">{{ item.pb_product }}</td>
                         <td>{{ item.pb_qty }} шт.</td>
                         <td>по {{ item.pb_price_per_item|floatformat:0 }} руб.</td>
                         <td><a class="delete-item" href="{% url 'orders:basket_adding' %}" data-product_id="{{ item.id }}">X</a></td>
@@ -66,7 +63,7 @@
                     {% endfor %}
                 </tbody>
             </table>
-            <div type="button" class="create-order btn btn-form m-2 {% if products_total_nmb == 0 %}d-no{% endif%}">Оформить заказ</div>
+            <div type="button" class="create-order submit-btn btn btn-form m-2 {% if products_total_nmb == 0 %}d-no{% endif%}">Оформить заказ</div>
     </div>
 </nav>
 
