@@ -59,10 +59,12 @@ class OrderCreateView(PassRequestMixin, SuccessMessageMixin, generic.CreateView)
     success_message = 'Ваша заявка принята, вскоре мы вам перезвоним'
     success_url = reverse_lazy('landing:landing')
 
-    # def get_success_url(self):
-    #     investions_pk=self.kwargs['pk']
-    #     return reverse_lazy('investions:investion_n', kwargs={'pk': investions_pk})
-    #
+    def get_success_url(self):
+        # investions_pk=self.kwargs['pk']
+        print('safaf')
+        return reverse_lazy('landing:landing')
+
+
     # def form_valid(self, form):
     #     if 'referer' in self.request.session:
     #         referer_id = self.request.session['referer']
