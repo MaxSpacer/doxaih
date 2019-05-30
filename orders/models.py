@@ -21,13 +21,12 @@ class Status_order(models.Model):
 # Create your models here.
 class Order(models.Model):
     customer_name = models.CharField(verbose_name="ваше имя", max_length=64, blank=False, null=True, default=None)
-    customer_email = models.EmailField(verbose_name="ваш e-mail", max_length=64, blank=True, null=True, default=None)
+    # customer_email = models.EmailField(verbose_name="ваш e-mail", max_length=64, blank=True, null=True, default=None)
     customer_phone = PhoneNumberField(verbose_name="ваш телефон", blank=False, null=True, default=None)
     customer_adress = models.TextField(verbose_name="адрес доставки", blank=False, null=True, default=None)
     customer_comments = models.TextField(verbose_name="комментарии к заказу", blank=True, null=True, default=None)
-    total_price_order = models.DecimalField(max_digits=10, decimal_places=2, default=0) #total_price in order for all products
-    status = models.ForeignKey(Status_order, on_delete=models.SET_DEFAULT, default=1)
-    # order_session_key = models.CharField(max_length=128, default=None)
+    total_price_order = models.DecimalField(verbose_name = 'общая сумма заказа', max_digits=10, decimal_places=2, default=0) #total_price in order for all products
+    status = models.ForeignKey(Status_order, on_delete=models.SET_DEFAULT, default=1, verbose_name = 'статус заказа')
     created = models.DateTimeField(auto_now_add=True , auto_now=False)
     updated = models.DateTimeField(auto_now_add=False , auto_now=True)
 
