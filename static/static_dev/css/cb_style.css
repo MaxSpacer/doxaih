@@ -621,6 +621,7 @@ button:focus {
     vertical-align: middle;
     padding: .55rem;
     border: 0;
+    color: white;
 }
 
 .input[type="number"] {
