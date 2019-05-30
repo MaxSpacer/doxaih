@@ -68,8 +68,21 @@ class OrderCreateView(PassRequestMixin, SuccessMessageMixin, generic.CreateView)
         # investions_pk=self.kwargs['pk']
         print('safaf')
         print(self.object.id)
-        # ,args=(self.object.id,)
+        print(self.object)
+        session_key = self.request.session.session_key
+        products_in_basket = ProductinBasket.objects.filter(pb_session_key=session_key, pb_is_active=True)
+        self.object.save()
+        for item in products_in_basket:
+            print(item)
+            item.pb_order = self.object
+            print(item.pb_order)
 
+            item.save()
+        # ,args=(self.object.id,)
+        # r_id = self.request.session
+        # session_key = self.session.session_key
+        # print(r_id)
+        # products_in_basket = ProductinBasket.objects.filter(pb_session_key=session_key, pb_is_active=True)
 
         return reverse_lazy('landing:landing')
 
@@ -77,6 +90,7 @@ class OrderCreateView(PassRequestMixin, SuccessMessageMixin, generic.CreateView)
         print('prefaf')
         print(self)
         print(form)
+
         # form.instance.investion = investion
 
         return super(OrderCreateView, self).form_valid(form)

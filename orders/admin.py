@@ -7,9 +7,13 @@ class ProductinOrderInline(admin.TabularInline):
 	model = ProductinOrder
 	extra = 0
 
+class ProductinBasketInline(admin.TabularInline):
+	model = ProductinBasket
+	extra = 0
+
 class OrderAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Order._meta.fields]
-    inlines = [ProductinOrderInline]
+    inlines = [ProductinBasketInline]
 
 admin.site.register(Order, OrderAdmin)
 

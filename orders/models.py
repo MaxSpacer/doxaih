@@ -27,6 +27,7 @@ class Order(models.Model):
     customer_comments = models.TextField(verbose_name="комментарии к заказу", blank=True, null=True, default=None)
     total_price_order = models.DecimalField(max_digits=10, decimal_places=2, default=0) #total_price in order for all products
     status = models.ForeignKey(Status_order, on_delete=models.SET_DEFAULT, default=1)
+    # order_session_key = models.CharField(max_length=128, default=None)
     created = models.DateTimeField(auto_now_add=True , auto_now=False)
     updated = models.DateTimeField(auto_now_add=False , auto_now=True)
 
