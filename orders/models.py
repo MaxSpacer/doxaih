@@ -76,12 +76,12 @@ def product_in_order_post_save(sender, instance, created, **kwargs):
 post_save.connect(product_in_order_post_save, sender=ProductinOrder)
 
 class ProductinBasket(models.Model):
-    pb_order = models.ForeignKey(Order, on_delete=models.SET_DEFAULT, blank=True, null=True, default=None)
-    pb_product = models.ForeignKey(Product, on_delete=models.SET_DEFAULT, blank=True, null=True, default=None)
-    pb_qty = models.IntegerField(default=1)
-    pb_price_per_item = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    pb_total_price = models.DecimalField(max_digits=10, decimal_places=0, default=0) #price*qty
-    pb_is_active = models.BooleanField(default=True)
+    pb_order = models.ForeignKey(Order, on_delete=models.SET_DEFAULT, blank=True, null=True, default=None, verbose_name = 'заказ')
+    pb_product = models.ForeignKey(Product, on_delete=models.SET_DEFAULT, blank=True, null=True, default=None, verbose_name = 'продукт')
+    pb_qty = models.IntegerField(default=1, verbose_name = 'Кол-во')
+    pb_price_per_item = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name = 'цена товара')
+    pb_total_price = models.DecimalField(max_digits=10, decimal_places=0, default=0, verbose_name = 'общая сумма') #price*qty
+    pb_is_active = models.BooleanField(default=True, verbose_name = 'активен?')
     pb_created = models.DateTimeField(auto_now_add=True , auto_now=False)
     pb_updated = models.DateTimeField(auto_now_add=False , auto_now=True)
     pb_session_key = models.CharField(max_length=128, default=None)

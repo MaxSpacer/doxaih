@@ -1,27 +1,5 @@
 
 $(document).ready(function() {
-
-
-        // cart Dropdown menu
-        // $(document).mouseup(function (e){ // отслеживаем событие клика по веб-документу
-        //     e.preventDefault();
-        //     // $( "#cartDropdown" ).click(function() {
-        //     //     $(".cart-dropdown-menu").toggle();
-        //     // });
-        //
-        //     var block = $(".cart-dropdown-menu");
-        //     var block2 = $("#cartDropdown");
-        //     if (block2.is(e.target)) {
-        //         console.log('wdwd');
-        //         block.toggle();
-        //
-        //     } else {
-        //         if (!block.is(e.target)// проверка условия если клик был не по нашему блоку
-        //         && block.has(e.target).length === 0) { // проверка условия если клик не по его дочерним элементам
-        //             block.hide() // если условия выполняются - скрываем наш элемент
-        //         };
-        //     };
-        // });
         //minicarousel owl buttons
         var owl = $('.owl-carousel');
         owl.owlCarousel({
@@ -73,6 +51,7 @@ $(document).ready(function() {
                data: data,
                cache: true,
                success: function (data) {
+                   // console.log(data);
                     if (!data.is_delete){
                         $.each(data.messages, function(k, v){
                             $('.modal-content').html("");
@@ -89,9 +68,10 @@ $(document).ready(function() {
                     $('.tables tbody').html("");
                     $.each(data.products, function(k, v){
                         var myTrunc = Math.trunc( v.price_per_item );
-                        $('.tables').append('<tr><td class="text-wrap text-left">'+v.product_name+'</ td><td>'+v.numb+' шт.</td><td> по '+myTrunc+' руб.</ td><td><a class="delete-item" href="#" data-product_id="'+v.id+'">X</a></td></ tr>');
+                        $('.tables').append('<tr><td class="text-wrap text-left">'+v.product_name+'</td><td>'+v.numb+' шт.</td><td> по '+myTrunc+' руб.</td><td><a class="delete-item" href="#" data-product_id="'+v.id+'">X</a></td></tr>');
                     });
                     if (data.products_total_nmb > 0) {
+                        $('.tables').append('<tr><td class="text-wrap text-left">'+'Итого:'+'</td><td></td><td>'+data.products_in_basket_total_price+' руб.</td><td></td></tr>');
                         $(".create-order").removeClass("d-no");
                     } else {
                         $(".create-order").addClass("d-no");
@@ -133,12 +113,25 @@ $(document).ready(function() {
         //placeholders for callback's form
         // document.getElementById('id_customer_name').placeholder = 'Александр';
         // document.getElementById('id_customer_phone').placeholder = '+7 (765)256-12-15';
-
-
+        // products-in-basket-total-price
+        // $(".products-in-basket-total-price"), function(){
+        //     $("input[type='tel']").mask("+7 999 999-9999");
+        // });
+        // function products_in_baske_total_price_count(){
+        //     var total = 0;
+        //     // var val = $(".products-in-basket-total-price").val();
+        //    $('tables tr .').each(function()
+        //    {
+        //        total += this.val();
+        //    });
+        //    $('.products-in-basket-total-price').text(total + 'руб.');
+        //
+        // };
+        // products_in_baske_total_price_count();
         // form style
         $("input[type='tel']").mask("+7 999 999-9999");
         $("#modal").on('shown.bs.modal', function(){
                 $("input[type='tel']").mask("+7 999 999-9999");
         });
-        $("input[type='number']").inputSpinner();
+        // $("input[type='number']").inputSpinner();
 });

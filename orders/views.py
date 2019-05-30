@@ -31,18 +31,23 @@ def basket_adding(request):
 
     products_in_basket = ProductinBasket.objects.filter(pb_session_key=session_key, pb_is_active=True)
     products_total_nmb = products_in_basket.count()
+    # for item in products_in_basket:
+
 
     return_dict["products_total_nmb"] = products_total_nmb
     return_dict["products"] = list()
+    products_in_basket_total_price = 0
     for item in products_in_basket:
         product_dict = dict()
         product_dict["id"] = item.id
         product_dict["product_name"] = item.pb_product.name
         product_dict["price_per_item"] = item.pb_price_per_item
         product_dict["numb"] = item.pb_qty
-        product_dict["numb"] = item.pb_qty
+        products_in_basket_total_price += item.pb_total_price
+        # product_dict["products_in_basket_total_price"] = item.pb_total_price
         return_dict["products"].append(product_dict)
 
+    return_dict["products_in_basket_total_price"] = products_in_basket_total_price
     return_dict["messages"] = []
     for message in messages.get_messages(request):
         return_dict["messages"].append({
@@ -57,14 +62,24 @@ class OrderCreateView(PassRequestMixin, SuccessMessageMixin, generic.CreateView)
     template_name = 'orders/create_order.html'
     form_class = OrderForm
     success_message = 'Ваша заявка принята, вскоре мы вам перезвоним'
-    success_url = reverse_lazy('landing:landing')
+    # success_url = reverse_lazy('landing:landing')
 
     def get_success_url(self):
         # investions_pk=self.kwargs['pk']
         print('safaf')
+        print(self.object.id)
+        # ,args=(self.object.id,)
+
+
         return reverse_lazy('landing:landing')
 
+    def form_valid(self, form):
+        print('prefaf')
+        print(self)
+        print(form)
+        # form.instance.investion = investion
 
+        return super(OrderCreateView, self).form_valid(form)
     # def form_valid(self, form):
     #     if 'referer' in self.request.session:
     #         referer_id = self.request.session['referer']
@@ -73,7 +88,6 @@ class OrderCreateView(PassRequestMixin, SuccessMessageMixin, generic.CreateView)
     #         form.instance.referal = user.profile
     #     investion = get_object_or_404(Investion,pk=self.kwargs['pk'])
     #     form.instance.investion = investion
-    #     return super(MainFormView, self).form_valid(form)
 # def checkout(request):
 #     products_in_basket = ProductinBasket.objects.filter(pb_session_key=session_key, pb_is_active=True)
 #     return render(request, 'checkout/checkout.html', locals())

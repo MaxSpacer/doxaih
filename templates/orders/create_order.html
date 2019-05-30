@@ -17,11 +17,18 @@
                   {% for item in products_in_basket %}
                   <tr>
                       <td class="text-wrap text-left">{{ item.pb_product }}</td>
-                      <td>{{ item.pb_qty }} шт.</td>
+                      <td class="text-nowrap">{{ item.pb_qty }} шт.</td>
                       <td>по {{ item.pb_price_per_item|floatformat:0 }} руб.</td>
                       <td><a class="delete-item" href="{% url 'orders:basket_adding' %}" data-product_id="{{ item.id }}">X</a></td>
                   </tr>
                   {% endfor %}
+                  <tr>
+                      <td><span></span></td>
+                      <td><span></span></td>
+                      <td>
+                          Итого:  {{ products_in_basket_total_price }} руб.
+                      </td>
+                  </tr>
               </tbody>
           </table>
       </div>
@@ -31,11 +38,14 @@
               {{ error }}
               {% endfor %}
           </div>
-
           {% for field in form %}
           <div class="col-6">
               <label class="d-none invisible" for="{{ field.id_for_label }}">{{ field.label }}</label>
-              {% render_field field class="form-control my-1" placeholder=field.label %}
+            {% if field.name == 'total_price_order' %}
+                <input type="hidden" name="{{ field.name }}" value="{{ products_in_basket_total_price }}" required="" id="id_{{ field.name }}">
+            {% else %}
+                {% render_field field class="form-control my-1" placeholder=field.label %}
+            {% endif %}
               <div class="{% if field.errors %} invalid{% endif %}">
                   {% for error in field.errors %}
                   <p class="help-block text-warning">{{ error }}</p>
