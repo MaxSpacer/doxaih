@@ -48,8 +48,9 @@ INSTALLED_APPS = [
     # Project apps
     'landing',
     'modposting',
-    'orders',
     'products',
+    # 'orders',
+    'orders.apps.OrdersConfig',
     # 'checkout',
     'events',
     'aboutus',

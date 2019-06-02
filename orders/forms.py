@@ -1,9 +1,7 @@
-
-
 from django.forms import ModelForm, Textarea
 from .models import Order
 from bootstrap_modal_forms.mixins import PopRequestMixin, CreateUpdateAjaxMixin
-
+# from django.forms.widgets import HiddenInput
 
 class OrderForm(PopRequestMixin, CreateUpdateAjaxMixin, ModelForm):
     class Meta:
@@ -12,4 +10,5 @@ class OrderForm(PopRequestMixin, CreateUpdateAjaxMixin, ModelForm):
         widgets = {
             'customer_comments': Textarea(attrs={'cols': 50, 'rows': 2}),
             'customer_adress': Textarea(attrs={'cols': 50, 'rows': 2}),
+            # 'order_session_key': HiddenInput(),
         }
