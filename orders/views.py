@@ -62,34 +62,34 @@ class OrderCreateView(PassRequestMixin, SuccessMessageMixin, generic.CreateView)
     template_name = 'orders/create_order.html'
     form_class = OrderForm
     success_message = 'Ваша заявка принята, вскоре мы вам перезвоним'
-    # success_url = reverse_lazy('landing:landing')
+    success_url = reverse_lazy('landing:landing')
 
-    def get_success_url(self):
-        # investions_pk=self.kwargs['pk']
-        print('safaf')
-        print(self.object.id)
-        print(self.object)
-        session_key = self.request.session.session_key
-        products_in_basket = ProductinBasket.objects.filter(pb_session_key=session_key, pb_is_active=True)
-        self.object.save()
-        for item in products_in_basket:
-            print(item)
-            item.pb_order = self.object
-            print(item.pb_order)
-
-            item.save()
-        # ,args=(self.object.id,)
-        # r_id = self.request.session
-        # session_key = self.session.session_key
-        # print(r_id)
-        # products_in_basket = ProductinBasket.objects.filter(pb_session_key=session_key, pb_is_active=True)
-
-        return reverse_lazy('landing:landing')
+    # def get_success_url(self):
+    #     # investions_pk=self.kwargs['pk']
+    #     print('safaf')
+    #     print(self.object.id)
+    #     print(self.object)
+    #     session_key = self.request.session.session_key
+    #     products_in_basket = ProductinBasket.objects.filter(pb_session_key=session_key, pb_is_active=True)
+    #     self.object.save()
+    #     for item in products_in_basket:
+    #         print(item)
+    #         item.pb_order = self.object
+    #         print(item.pb_order)
+    #
+    #         item.save()
+    #     # ,args=(self.object.id,)
+    #     # r_id = self.request.session
+    #     # session_key = self.session.session_key
+    #     # print(r_id)
+    #     # products_in_basket = ProductinBasket.objects.filter(pb_session_key=session_key, pb_is_active=True)
+    #
+    #     return reverse_lazy('landing:landing')
 
     def form_valid(self, form):
-        print('prefaf')
-        print(self)
-        print(form)
+        # print('prefaf')
+        # print(self)
+        # print(form)
 
         # form.instance.investion = investion
 

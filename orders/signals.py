@@ -41,11 +41,9 @@ from django.conf import settings
 
 def update_products_in_basket_on_create(sender, instance, created, **kwargs):
     if created:
-        SessionStore = import_module(settings.SESSION_ENGINE).SessionStore
-        s = SessionStore()
-        session_key = s.session_key
 
-        print(session_key)
+
+    
         print(sender)
         print('sender')
         print(instance)
