@@ -7,8 +7,8 @@ from django.db.models.signals import post_save
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.shortcuts import get_object_or_404
-from orders.models import ProductinBasket
-from .models import Order
+# from orders.models import
+from .models import ProductinBasket, Order
 from importlib import import_module
 from django.conf import settings
 
@@ -42,12 +42,21 @@ from django.conf import settings
 def update_products_in_basket_on_create(sender, instance, created, **kwargs):
     if created:
 
+        products_in_basket = ProductinBasket.objects.filter(pb_session_key=instance.order_session_key, pb_is_active=True)
+        print(products_in_basket)
 
-    
+        for items in products_in_basket:
+            items.pb_order = instance
+            # items.pb_in_cart = False
+            items.pb_session_key = None
+            print(instance)
+            print('instance')
+            print(items)
+            items.save()
+
+
         print(sender)
         print('sender')
-        print(instance)
-        print('instance')
         # print()
     pass
         # context = {

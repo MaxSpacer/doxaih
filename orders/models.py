@@ -66,10 +66,10 @@ class ProductinBasket(models.Model):
     pb_price_per_item = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name = 'цена товара')
     pb_total_price = models.DecimalField(max_digits=10, decimal_places=0, default=0, verbose_name = 'общая сумма') #price*qty
     pb_is_active = models.BooleanField(default=True, verbose_name = 'активен?')
-    pb_in_cart = models.BooleanField(default=True, verbose_name = 'активен?')
+    # pb_in_cart = models.BooleanField(default=True, verbose_name = 'в корзине?')
     pb_created = models.DateTimeField(auto_now_add=True , auto_now=False)
     pb_updated = models.DateTimeField(auto_now_add=False , auto_now=True)
-    pb_session_key = models.CharField(max_length=128, default=None)
+    pb_session_key = models.CharField(max_length=128, default=None, blank=True, null=True)
 
     class Meta:
         verbose_name = 'Товар в корзине'
