@@ -129,11 +129,7 @@
         border-bottom: 1px solid #f6a584;
         padding-left: 0px;
     }
-    #main_nav > .active {
-        border-bottom: 0px;
-        border: 4px;
 
-    }
     .nav-justified .nav-item {
 
         text-align: left;

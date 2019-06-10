@@ -13,6 +13,6 @@ class ProductAdmin(admin.ModelAdmin):
     inlines = [ProductImageInline]
 admin.site.register(Product, ProductAdmin)
 
-class ProductImageAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in ProductImage._meta.fields]
-admin.site.register(ProductImage, ProductImageAdmin)
+# class ProductImageAdmin(admin.ModelAdmin):
+#     list_display = [field.name for field in ProductImage._meta.fields]
+# admin.site.register(ProductImage, ProductImageAdmin)
