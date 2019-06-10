@@ -18,10 +18,9 @@ class Status_order(models.Model):
         verbose_name = 'Статус заказа'
         verbose_name_plural = 'Статусы заказа'
 
-# Create your models here.
+
 class Order(models.Model):
     customer_name = models.CharField(verbose_name="ваше имя", max_length=64, blank=False, null=True, default=None)
-    # customer_email = models.EmailField(verbose_name="ваш e-mail", max_length=64, blank=True, null=True, default=None)
     customer_phone = PhoneNumberField(verbose_name="ваш телефон", blank=False, null=True, default=None)
     customer_adress = models.TextField(verbose_name="адрес доставки", blank=False, null=True, default=None)
     customer_comments = models.TextField(verbose_name="комментарии к заказу", blank=True, null=True, default=None)
@@ -41,23 +40,8 @@ class Order(models.Model):
     def save(self, *args, **kwargs):
         super(Order, self).save(*args, **kwargs)
 
-#     def save(self, *args, **kwargs):
-#         price_per_item = self.product.price
-#         self.price_per_item = price_per_item
-#         self.total_price = self.qty * self.price_per_item
-#         super(ProductinOrder, self).save(*args, **kwargs)
-#
-# @disable_for_loaddata
-# def product_in_order_post_save(sender, instance, created, **kwargs):
-#     order = instance.order
-#     all_products_in_order = ProductinOrder.objects.filter(order=order, is_active=True)
-#     order_total_price = 0
-#     for item in all_products_in_order:
-#         order_total_price += item.total_price
-#     instance.order.total_price_order = order_total_price
-#     instance.order.save(force_update=True)
-#
 # post_save.connect(product_in_order_post_save, sender=ProductinOrder)
+
 
 class ProductinBasket(models.Model):
     pb_order = models.ForeignKey(Order, on_delete=models.SET_DEFAULT, blank=True, null=True, default=None, verbose_name = 'заказ')
@@ -66,7 +50,6 @@ class ProductinBasket(models.Model):
     pb_price_per_item = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name = 'цена товара')
     pb_total_price = models.DecimalField(max_digits=10, decimal_places=0, default=0, verbose_name = 'общая сумма') #price*qty
     pb_is_active = models.BooleanField(default=True, verbose_name = 'активен?')
-    # pb_in_cart = models.BooleanField(default=True, verbose_name = 'в корзине?')
     pb_created = models.DateTimeField(auto_now_add=True , auto_now=False)
     pb_updated = models.DateTimeField(auto_now_add=False , auto_now=True)
     pb_session_key = models.CharField(max_length=128, default=None, blank=True, null=True)

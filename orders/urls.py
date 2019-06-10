@@ -21,5 +21,4 @@ app_name='orders'
 urlpatterns = [
     path('basket_adding/', views.basket_adding, name='basket_adding'),
     path('create_order/', views.OrderCreateView.as_view(), name='create_order'),
-    # re_path(r'(?P<product_id>[0-9])/$', views.product, name='product_n'),
 ]

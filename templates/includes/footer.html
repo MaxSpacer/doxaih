@@ -12,20 +12,6 @@
                 <div class="col-12 col-sm-4">
                 {% include "includes/footer-form.html" %}
                 </div>
-                <!-- <div class="col-md-4 col-lg-3 nav-footer d-none d-sm-inline-flex px-0">
-                    <div class="col-6 p-0">
-                            <a class="nav-link {% if request.path == '/' %} active{% endif %}" href="/">Мен</a>
-                            <a class="nav-link text-nowrap{% if request.path == '/aboutus/' %} active{% endif %}" href="/aboutus">О нас</a>
-                            <a class="nav-link {% if '/educations/' in request.path %} active{% endif %}" href="/educations">Обучение</a>
-                            <a class="nav-link {% if '/events/' in request.path %} active{% endif %}" href="/events">Инвестиции</a>
-                    </div>
-                    <div class="col-6 p-0">
-                            <a class="nav-link{% if '/events/' in request.path %} active{% endif %}" href="/events">Мероприятия</a>
-                            <a class="nav-link {% if request.path == '/contacts/' %} active{% endif %}" href="/contacts">Контакты</a>
-                            <a class="nav-link text-nowrap disabled{% if request.path == '/hall/' %} active{% endif %}" href="/hall">Закрытый клуб</a>
-                    </div>
-                </div> -->
-
                 <div class="col-12 col-sm-3 mt-3 mt-md-0">
                     <table class="mx-md-auto">
                        <tr>
@@ -34,7 +20,7 @@
                        </tr>
                        <tr>
                          <td><i class="fas fa-phone fa-flip-horizontal"></i></td>
-                         <td class="pl-3 text-light text-nowrap">+7 (925) 799-55-37</td>
+                         <td class="pl-3 text-light text-nowrap">{{ number_phone }}</td>
                        </tr>
                     </table>
                 </div>

@@ -4,6 +4,7 @@ from landing.forms import CallmecontactForm
 from educations.forms import EducationOrderForm
 from orders.models import ProductinBasket
 from products.models import ProductImage
+from hall.models import Preference
 from django.contrib import messages
 
 def getting_basket_info(request):
@@ -17,4 +18,6 @@ def getting_basket_info(request):
         products_in_basket_total_price += item.pb_total_price
     form = CallmecontactForm(request.POST or None)
     popular_products = ProductImage.objects.filter(is_active=True, is_main=True, product__is_active=True, product__popular = True)
+    number_phone = Preference.objects.filter(is_active=True).first()
+
     return locals()

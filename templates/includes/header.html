@@ -2,7 +2,9 @@
 {% load static %}
 <nav class="navbar navbar-expand-md bg-menu p-1 text-light fixed-top">
     <div class="navbar-brand text-nowrap m-0 p-1">
-        <img class="" src="{% static 'img/dishes2.png' %}" alt="">
+        <a href="/">
+            <img class="" src="{% static 'img/dishes2.png' %}" alt="">
+        </a>
     </div>
     <div class="text-logo p-1 ml-md-3 d-none d-sm-block">
         <div>Кафе</div>
@@ -31,7 +33,7 @@
                 </li>
                 <li class="text-white py-3 px-5 d-md-none">
                     <i class="fas fa-phone fa-flip-horizontal"></i>
-                    <span>+7 (925) 799-55-37</span>
+                    <span>{{ number_phone }}</span>
                 </li>
                 <li class="px-5 d-md-none">
                     <button type="button" onclick="location.href='#id_form_footer';" class="btn btn-form px-3 px-sm-5 mb-4">Заказать звонок</button>
@@ -40,7 +42,7 @@
         </nav>
     </div>
     <div class="nav-phone text-right text-nowrap order-md-4">
-        <a class="d-block" href="tel:+7 (499) 254-11-03"><i class="fas fa-phone fa-flip-horizontal fa-fw"></i><span class="d-none d-md-inline">+7 (499) 254-11-03</span></a>
+        <a class="d-block" href="tel:{{ number_phone }}"><i class="fas fa-phone fa-flip-horizontal fa-fw"></i><span class="d-none d-md-inline">{{ number_phone }}</span></a>
         <div class="d-none d-md-block">Приём заказов с 09:00 до 20:30</div>
     </div>
     <div class="order-md-5 position-relative mx-2 p-0 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" id="cartDropdown">
