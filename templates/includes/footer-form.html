@@ -2,7 +2,7 @@
 {% load static %}
 {% block footer_form %}
 
-<form method="post">
+<form action="{% url 'landing:create_callme' %}" method="post">
     {% csrf_token %}
     <div class="mainformheader">
         <h5 class="mainformtitle">Оставьте контакты и мы вам перезвоним.</h5>
@@ -15,7 +15,7 @@
                 {% endfor %}
             </div>
             {% for field in form %}
-            <div class="col-12 col-sm-6 my-1">
+            <div class="col-12 col-md-6 my-1">
                 <label class="d-none" for="{{ field.id_for_label }}">{{ field.label }}</label>
                 {% render_field field class="form-control" placeholder=field.label %}
                 <div class="{% if field.errors %} invalid{% endif %}">

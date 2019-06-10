@@ -1,7 +1,6 @@
-{% load widget_tweaks %}
 {% if messages %}
     {% for message in messages %}
-    <div  id="modal_message" class="modal fade" tabindex="-1" role="dialog">
+    <div  id="modal_message" class="modal fade show" tabindex="-1" role="dialog" >
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
     		<!-- <div class="modal-header">
@@ -15,7 +14,7 @@
                         <!-- <div id="#addInCart"> -->
                             {% if message %}
                             {{ message | safe }}
-                            {% else %}Товар к корзине
+                            {% else %}
                             {% endif %}
                         <!-- </div> -->
     					<button type="button" class="close btn-dark" data-dismiss="modal" aria-label="Close">

@@ -57,8 +57,8 @@ class Mainformcontact(models.Model):
         verbose_name_plural = 'Контакты с главной страницы'
 
 
-from .signals import send_mail_on_callback
-from .signals import send_mail_main_form
+# from .signals import send_mail_on_callback
+# from .signals import send_mail_main_form
 # connect them
 # post_save.connect(send_mail_on_callback,sender=Callmecontact,dispatch_uid="my_unique_identifier")
 # post_save.connect(send_mail_main_form,sender=Mainformcontact,dispatch_uid="my_unique_identifier")
