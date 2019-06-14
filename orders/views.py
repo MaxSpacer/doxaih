@@ -2,12 +2,13 @@ from django.http import JsonResponse
 from .models import ProductinBasket
 # from django.shortcuts import render
 from django.contrib.messages.views import SuccessMessageMixin
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views import generic
 from bootstrap_modal_forms.mixins import PassRequestMixin
 from .forms import OrderForm
 from django.contrib import messages
-
+from django.shortcuts import redirect
+from django.http import HttpResponseRedirect
 
 def basket_adding(request):
     return_dict = dict()
@@ -62,4 +63,16 @@ class OrderCreateView(PassRequestMixin, SuccessMessageMixin, generic.CreateView)
     template_name = 'orders/create_order.html'
     form_class = OrderForm
     success_message = 'Ваша заявка принята, вскоре мы вам перезвоним'
-    success_url = reverse_lazy('landing:landing')
+    # success_url = reverse_lazy('landing:landing')
+    def get_success_url(self):
+        # return reverse_lazy('landing:landing')
+         # return reverse('referals:ref_session_add_n')
+        return HttpResponseRedirect(reverse('landing:landing') )
+    def form_valid(self, form):
+        # if 'referer' in self.request.session:
+        #     referer_id = self.request.session['referer']
+            # user = User.objects.get(pk=referer_id)
+            # form.instance.referal = user.profile
+        print(self)
+        print(form)
+        return super(OrderCreateView, self).form_valid(form)

@@ -1,5 +1,49 @@
-
-Заказ курса № edu-{{order_number}}.
-Клиент {{order_name}} заказал курс - {{order_edu}}.
-Номер клиента для созвона:{{contact_phone}}.
-Email клиента: {{contact_email}}
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <ul>
+            <li>
+                Заказ № {{order_number}} на сумму: {{total_price_order}} рублей.
+            </li>
+            <li>
+                Клиент: {{order_name}}.
+            </li>
+            <li>
+                Адресс: {{order_adress}}.
+            </li>
+            <li>
+                Номер клиента для созвона: {{contact_phone}}.
+            </li>
+            <li>
+                Комментарии клиента:  {{contact_comments}}.
+            </li>
+        </ul>
+        --------------------------------------------
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col"> Наименование </th>
+              <th scope="col"> Цена </th>
+              <th scope="col"> Кол-во </th>
+              <th scope="col"> Сумма </th>
+            </tr>
+          </thead>
+          <tbody>
+        {% for v in basket_order %}
+            <tr>
+                {% for i,k in v.items %}
+                    <td>
+                        {{k}}
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+          </tbody>
+        </table>
+        <p>Итог: {{total_price_order}} рублей.</p>
+    </body>
+</html>
