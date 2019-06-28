@@ -27,7 +27,7 @@ urlpatterns = [
     path('admin/filebrowser/', site.urls),
     path('admin/', admin.site.urls),
     path('product/', include('products.urls')),
-    path('', include('landing.urls')),
+    path('', include('landing.urls'), name='test'),
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('ref/', include('referals.urls')),

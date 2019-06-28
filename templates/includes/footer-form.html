@@ -10,11 +10,11 @@
     <div class="mainformbody">
         <div class="form row">
             <div class="{% if form.non_field_errors %}invalid{% endif %} mb-2">
-                {% for error in form.non_field_errors %}
+                {% for error in form1.non_field_errors %}
                 {{ error }}
                 {% endfor %}
             </div>
-            {% for field in form %}
+            {% for field in form1 %}
             <div class="col-12 col-md-6 my-1">
                 <label class="d-none" for="{{ field.id_for_label }}">{{ field.label }}</label>
                 {% render_field field class="form-control" placeholder=field.label %}

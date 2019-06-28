@@ -18,7 +18,8 @@ def update_products_in_basket_on_create(sender, instance, created, **kwargs):
         products_in_basket = ProductinBasket.objects.filter(pb_session_key=instance.order_session_key, pb_is_active=True)
         for items in products_in_basket:
             items.pb_order = instance
-            items.pb_session_key = None
+            items.pb_is_active = False
+            # items.pb_session_key = None
             print(instance)
             print(items)
             items.save()

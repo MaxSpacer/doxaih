@@ -1,5 +1,6 @@
 
 $(document).ready(function() {
+
         //minicarousel owl buttons
         var owl = $('.owl-carousel');
         owl.owlCarousel({
@@ -62,7 +63,9 @@ $(document).ready(function() {
                                 }, 700);
                         });
                     } else {
-                        $(".dropdown-menu").addClass("show");
+                        $("#table-basket").parent().addClass("show");
+                        $("#table-basket").parent().parent().addClass("show");
+
                     };
                     $('#basket_total_nmb').text(" "+data.products_total_nmb+" ");
                     $('.tables tbody').html("");
@@ -104,12 +107,12 @@ $(document).ready(function() {
         //   $('#myInput').trigger('focus')
         // })
 
-        $(document).on('click', '.navbar-toggler', function() {
-            var elements = this.getElementsByTagName('span');
-            for (var i = 0; i < elements.length; i++) {
-                elements[i].classList.toggle("show")
-            }
-        });
+        // $(document).on('click', '.navbar-toggler', function() {
+        //     var elements = this.getElementsByTagName('span');
+        //     for (var i = 0; i < elements.length; i++) {
+        //         elements[i].classList.toggle("show")
+        //     }
+        // });
         //placeholders for callback's form
         // document.getElementById('id_customer_name').placeholder = 'Александр';
         // document.getElementById('id_customer_phone').placeholder = '+7 (765)256-12-15';
@@ -134,5 +137,6 @@ $(document).ready(function() {
                 $("input[type='tel']").mask("+7 999 999-9999");
         });
         $('#modal_message').modal('show')
-        // $("input[type='number']").inputSpinner();
+        $("input[type='number']").inputSpinner();
+
 });

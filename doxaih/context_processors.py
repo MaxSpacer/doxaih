@@ -16,7 +16,7 @@ def getting_basket_info(request):
     products_in_basket_total_price = 0
     for item in products_in_basket:
         products_in_basket_total_price += item.pb_total_price
-    form = CallmecontactForm(request.POST or None)
+    form1 = CallmecontactForm(request.POST or None)
     popular_products = ProductImage.objects.filter(is_active=True, is_main=True, product__is_active=True, product__popular = True)
     number_phone = Preference.objects.filter(is_active=True).first()
 

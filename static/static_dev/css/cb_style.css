@@ -18,6 +18,12 @@ body {
     /* font-family: 'Podkova', serif; */
     /* font-family: 'Roboto', sans-serif; */
 }
+
+body.modal-open{
+  padding-right: 0 !important;
+}
+
+
 a{color: #f28356;}
 .bg-menu{
     background-color: #535251;
@@ -547,14 +553,17 @@ opacity: 0.3; } */
     font-size: 0.8rem;
 }
 
+.nav-link.active{
+    /* background-color: red; */
+    border-bottom: 2px solid  #f28356;
+    padding-bottom: 5px;
+}
 .nav-link:hover{
     /* background-color: red; */
     border-bottom: 2px solid  #f28356;
     padding-bottom: 5px;
-
-    /* background-color: rgba(50, 50, 50, .65); */
-    /* background-color: rgba(0,0,0,.03); */
 }
+
 #navbarCollapse a{
     font-family: 'Gotham Pro Light';
     font-size: 1.2rem;
@@ -568,46 +577,48 @@ button:focus {
     display: inline-block;
 }
 .navbar-toggler-img{
-    width: 1.3em;
-    height: 1.1em;
+    width: 1.8em;
+    height: 1.5em;
     vertical-align: middle;
     content: "";
     background: no-repeat center center;
         background-image: url("/static/img/menu-toggler.png");
     background-size: 100% 100%;
 }
-.navbar-toggler-close{
+/* .navbar-toggler-close{
     width: 26px;
     height: 1.1em;
     vertical-align: middle;
     content: "";
     background: no-repeat center center;
         background-image: url("/static/img/close-toggler.png");
-        /* background-size: auto; */
     background-size: 100% 100%;
-}
+} */
 .cart-dish,#basket_total_nmb{
     cursor: pointer;
 }
 #basket_total_nmb {
     position: absolute;
+    color: white;
     top: 50%;  /* position the top  edge of the element at the middle of the parent */
     left: 50%; /* position the left edge of the element at the middle of the parent */
     transform: translate(-50%, -50%); /* This is a shorthand of translateX(-50%) and translateY(-50%) */
 }
- .dropdown-toggle::after {
+ /* .dropdown-toggle::after {
     display: none;
-}
+} */
 .dropdown-menu{
-    display: none;
-    left: auto;
-    right: 0%;
-      /* background-color: #535251; */
-      /* width: 200px;
-      height: 100px; */
+     /* position: fixed;
+     right: 0; */
+     top: 110%;
+     left: auto;
+     right: 0;
+}
+.dropdown-toggle::after {
+    display:none;
 }
 .dropdown-menu .table td{
-        border-bottom: 1px solid #535251;
+        /* border-bottom: 1px solid #535251; */
         /* background-color: #535251; */
       /* width: 200px;
       height: 100px; */

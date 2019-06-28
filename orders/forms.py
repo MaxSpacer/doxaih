@@ -2,8 +2,10 @@ from django.forms import ModelForm, Textarea
 from .models import Order
 from bootstrap_modal_forms.mixins import PopRequestMixin, CreateUpdateAjaxMixin
 from django.forms.widgets import HiddenInput
+from bootstrap_modal_forms.forms import BSModalForm
 
-class OrderForm(PopRequestMixin, CreateUpdateAjaxMixin, ModelForm):
+
+class OrderForm(BSModalForm):
     class Meta:
         model = Order
         fields = ['customer_name', 'customer_phone','customer_adress','customer_comments','total_price_order','order_session_key']
