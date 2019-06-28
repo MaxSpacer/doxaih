@@ -553,7 +553,7 @@ opacity: 0.3; } */
     font-size: 0.8rem;
 }
 
-.nav-link.active{
+.nav-link.proactive{
     /* background-color: red; */
     border-bottom: 2px solid  #f28356;
     padding-bottom: 5px;
