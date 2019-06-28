@@ -23,9 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'nroz4=s6m7iik7dgqg3s$vt4j7bx^t!o5m*6b7(#b!+235$v_#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['*']
+# DEBUG = True
+#
+# ALLOWED_HOSTS = ['*']
+DEBUG = False
+ALLOWED_HOSTS = ['doxaih.ru']
 
 
 # Application definition
