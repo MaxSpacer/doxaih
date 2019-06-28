@@ -58,13 +58,13 @@
                 </form>
                 <ul class="nav justify-content-center flex-column flex-md-row">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == '/' %} proactive{% endif %}" href="/">Меню</a>
+                        <a class="nav-link{% if request.path == '/' %} proactive{% endif %}" href="/">Меню</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-nowrap {% if request.path == '/aboutus/' %} proactive{% endif %}" href="/aboutus">Доставка</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if '/contacts/' in request.path %} proactive{% endif %}" href="/contacts">Контакты</a>
+                        <a class="nav-link{% if '/contacts/' in request.path %} proactive{% endif %}" href="/contacts">Контакты</a>
                     </li>
                     <li class="text-white py-3 px-5 d-md-none">
                         <i class="fas fa-phone fa-flip-horizontal"></i>

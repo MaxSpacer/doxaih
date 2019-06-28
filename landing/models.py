@@ -6,22 +6,6 @@ from tinymce import HTMLField
 from accounts.models import Profile
 
 
-# class Landpost(models.Model):
-#     title = models.CharField(max_length=120)
-#     description = models.TextField(max_length=250,null=True)
-#     content = HTMLField('Content')
-#     order_render = models.IntegerField(default=0)
-#     is_active = models.BooleanField(default=False)
-#     created = models.DateTimeField(auto_now_add=True, auto_now=False)
-#     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
-#
-#     def __str__(self):
-#         return self.title
-#
-#     class Meta:
-#         verbose_name = 'Пост для лендинга'
-#         verbose_name_plural = 'Посты для лендинга'
-
 class Landpost(models.Model):
     title = models.CharField(max_length=120)
     content = HTMLField('Content')
@@ -53,26 +37,5 @@ class Callmecontact(models.Model):
         verbose_name_plural = 'Контакты для обратного звонка'
         # app_label = 'landing'
 
-
-# class Mainformcontact(models.Model):
-#     customer_name = models.CharField(verbose_name="ваше имя", max_length=32, default=None)
-#     customer_phone = PhoneNumberField(verbose_name="ваш телефон")
-#     customer_email = models.EmailField(verbose_name="ваш e-mail", max_length=64, blank=True, null=True, default=None)
-#     referal = models.ForeignKey(Profile, on_delete=models.SET_DEFAULT, blank=True, null=True, default=None)
-#     is_emailed = models.BooleanField(default=False)
-#     created = models.DateTimeField(auto_now_add=True , auto_now=False)
-#     updated = models.DateTimeField(auto_now_add=False , auto_now=True)
-#
-#     def __str__(self):
-#         return "%s" % self.customer_name
-#
-#     class Meta:
-#         verbose_name = 'Контакт с главной страницы'
-#         verbose_name_plural = 'Контакты с главной страницы'
-
-
-# from .signals import send_mail_on_callback
-# from .signals import send_mail_main_form
-# connect them
-# post_save.connect(send_mail_on_callback,sender=Callmecontact,dispatch_uid="my_unique_identifier")
-# post_save.connect(send_mail_main_form,sender=Mainformcontact,dispatch_uid="my_unique_identifier")
+    def save(self, *args, **kwargs):
+        super(Callmecontact, self).save(*args, **kwargs)

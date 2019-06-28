@@ -108,11 +108,14 @@
         max-width: 100%;
     }
     #main_nav li a{
-        margin-left: 3rem;
+        /* margin-left: 3rem;
         margin-right: 3rem;
-        border-bottom: 1px solid #f6a584;
-        padding-left: 0px;
-        font-size: 1.25rem;
+        border-bottom: 1px solid #f6a584; */
+
+
+        padding-left: 13%;
+        /* padding-left: 25%; */
+        font-size: 1.9rem;
     }
     /* .nav-justified .nav-item {
 

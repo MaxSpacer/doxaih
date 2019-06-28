@@ -46,10 +46,11 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'nested_admin',
     # Project apps
-    'landing',
+    # 'landing',
     'modposting',
     'products',
     # 'orders',
+    'landing.apps.LandingConfig',
     'orders.apps.OrdersConfig',
     # 'checkout',
     'events',

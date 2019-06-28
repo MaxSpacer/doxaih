@@ -258,31 +258,6 @@ opacity: 0.3; } */
     vertical-align: middle;
 
 }
-.main-promo .women-promo{
-
-        /* width: 100%; */
-       /* position: absolute; */
-       /* top: 50%; */
-       /* left: 50%; */
-       /* transform: translate(-50%, -50%); */
-       /* max-width: 100%; */
-       /* width: 140%; */
-       /* opacity: 0.03; */
-    }
-
-
-
-/*  main promo section END
-========================================== */
-/*
-.modal-content{ background-color: rgba(249, 217, 106, 1); }
-.modal-header .close:hover {
-    background-color: white;
-}
-.modal-content .modal-header{
-    background-color: rgba(249, 217, 106, 1); }
-} */
-
 
 .btn-event, .edu-btn{
   -webkit-appearance: none;
@@ -556,11 +531,6 @@ opacity: 0.3; } */
 }
 
 .nav-link.proactive{
-    /* background-color: red; */
-    border-bottom: 2px solid  #f28356;
-    padding-bottom: 5px;
-}
-.nav-link:hover{
     /* background-color: red; */
     border-bottom: 2px solid  #f28356;
     padding-bottom: 5px;
