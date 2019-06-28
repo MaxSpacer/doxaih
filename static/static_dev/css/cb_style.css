@@ -25,6 +25,8 @@ body.modal-open{
 
 
 a{color: #f28356;}
+a:hover{color: white;}
+
 .bg-menu{
     background-color: #535251;
 }
