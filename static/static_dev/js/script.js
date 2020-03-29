@@ -35,7 +35,7 @@ $(document).ready(function() {
         // form-post
         var form = $('.formBuyProduct');
         var form_for_all_pages = $('.formsfor');
-        
+
         function basketUpdating(product_id, numb, is_delete){
             var data = {}
             data.product_id = product_id;
@@ -135,9 +135,18 @@ $(document).ready(function() {
         // form style
         $("input[type='tel']").mask("+7 999 999-9999");
         $("#modal").on('shown.bs.modal', function(){
-                $("input[type='tel']").mask("+7 999 999-9999");
+            $("input[type='tel']").mask("+7 999 999-9999");
         });
         $('#modal_message').modal('show')
         $("input[type='number']").inputSpinner();
+        $( ".for-zoom" ).click(function() {
+            $( ".product-text-description" ).toggle("show");
+        });
+        $( ".product-text-description" ).click(function() {
+            $( ".product-text-description" ).toggle("show");
+        });
+        // $( ".card-img-top" ).click(function() {
+        //     $( ".product-text-description" ).addClass("show");
+        // });
 
 });

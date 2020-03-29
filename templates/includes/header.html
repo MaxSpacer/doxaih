@@ -1,12 +1,12 @@
 {% block header %}
 {% load static %}
-<nav class="navbar navbar-expand-md bg-menu p-1 text-light fixed-top justify-content-around">
+<nav class="navbar navbar-expand-sm bg-menu p-1 text-light fixed-top justify-content-around">
     <div class="navbar-brand text-nowrap m-0 p-1">
         <a href="/">
             <img class="" src="{% static 'img/dishes2.png' %}" alt="">
         </a>
     </div>
-    <div class="text-logo p-1 ml-md-3 d-none d-sm-block">
+    <div class="text-logo p-1 ml-md-3">
         <div>Кафе</div>
         <div>Хинкальная</div>
         <div>г. Балашиха</div>
@@ -19,7 +19,7 @@
 
     <div class="btn-group order-sm-6">
       <button type="button" class="btn dropdown-toggle p-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <img src="{% static 'img/dish.png' %}" class="img-fluid cart-dish" alt="">
+          <img src="{% static 'img/dish.png' %}" class="cart-dish" alt="">
           <span id="basket_total_nmb">{{ products_total_nmb }}</span>
       </button>
       <div class="dropdown-menu bg-menu text-nowrap">
@@ -28,7 +28,7 @@
                   {% for item in products_in_basket %}
                   <tr>
                       <td class="text-left text-wrap">{{ item.pb_product }}</td>
-                      <td>{{ item.pb_qty }} шт.</td>
+                      <td class="p-0">{{ item.pb_qty }} шт.</td>
                       <td>по {{ item.pb_price_per_item|floatformat:0 }} руб.</td>
                       <td><a class="delete-item" href="{% url 'orders:basket_adding' %}" data-product_id="{{ item.id }}">X</a></td>
                   </tr>

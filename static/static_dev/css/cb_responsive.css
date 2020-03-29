@@ -22,6 +22,13 @@
         min-width: 130px;
         max-width: 131px;
     }
+    .dropdown-menu{
+         /* position: fixed; */
+         min-width: 500px;
+         /* top: 9%;
+         left: 0;
+         right: 0; */
+    }
 }
 @media (min-width: 768px) {
     #dropdown-menu-convert{
@@ -38,6 +45,10 @@
   }
     .navbar-brand img {
         max-height: 55px;
+    }
+    .owl-item .product-text-description{
+        font-size: 0.8rem;
+        line-height: 99%;
     }
 }
 @media (min-width: 992px) {
@@ -57,6 +68,7 @@
 @media (max-width: 575.98px) {
     .dropdown-menu{
          position: fixed;
+         width: 100%;
          top: 9%;
          left: 0;
          right: 0;
@@ -68,6 +80,7 @@
         font-size: 0.7rem;
     }
     .cart-dish{
+        min-width: 30px;
         max-width: 50px;
     }
     .team-img > p{
@@ -146,6 +159,9 @@
  }
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
+    /* .text-logo{
+        display: none;
+   } */
  }
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) { ... }
