@@ -1,6 +1,6 @@
 {% block header %}
 {% load static %}
-<nav class="navbar navbar-expand-sm bg-menu p-1 text-light fixed-top justify-content-around">
+<nav class="navbar flex-nowrap bg-menu p-1 text-light fixed-top">
     <div class="navbar-brand text-nowrap m-0 p-1">
         <a href="/">
             <img class="" src="{% static 'img/dishes2.png' %}" alt="">
@@ -46,17 +46,17 @@
           <div type="button" class="create-order btn btn-form m-2 {% if products_total_nmb == 0 %}d-no{% endif%}">Оформить заказ</div>
       </div>
     </div>
-    <div class="btn-group flex-md-fill align-self-md-end">
+    <div class="btn-group align-self-md-end">
         <button type="button" class="navbar-toggler btn dropdown-toggle p-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="navbar-toggler-img show"></span>
             <!-- <span class="navbar-toggler-close"></span> -->
         </button>
-        <div id="dropdown-menu-convert" class="dropdown-menu bg-menu">
-            <nav id="main_nav">
+        <div id="dropdown-menu-convert" class="dropdown-menu bg-menu flex-shrink-0">
+            <!-- <nav id="main_nav"> -->
                 <form class="formsfor invisible m-0" action="{% url 'orders:basket_adding' %}" method="">
                     {% csrf_token %}
                 </form>
-                <ul class="nav justify-content-center flex-column flex-md-row">
+                <ul class="nav flex-column flex-md-row">
                     <li class="nav-item">
                         <a class="nav-link{% if request.path == '/' %} proactive{% endif %}" href="/">Меню</a>
                     </li>
@@ -66,15 +66,15 @@
                     <li class="nav-item">
                         <a class="nav-link{% if '/contacts/' in request.path %} proactive{% endif %}" href="/contacts">Контакты</a>
                     </li>
-                    <li class="text-white py-3 px-5 d-md-none">
+                    <li class="text-white py-3 pl-3 d-md-none">
                         <i class="fas fa-phone fa-flip-horizontal"></i>
                         <span>{{ number_phone }}</span>
                     </li>
-                    <li class="px-5 d-md-none">
+                    <li class="d-md-none pl-3">
                         <button type="button" onclick="location.href='#id_form_footer';" class="btn btn-form px-3 px-sm-5">Заказать звонок</button>
                     </li>
                 </ul>
-            </nav>
+            <!-- </nav> -->
         </div>
     </div>
 </nav>

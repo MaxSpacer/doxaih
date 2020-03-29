@@ -1,19 +1,23 @@
 {% load static %}
 {% block footer %}
-<footer class="footer text-muted container-fluid px-0 mt-5" >
+<footer class="footer container-fluid px-0 mt-5" >
     <div class="position-relative">
         <img src="{% static 'img/lkwid-logo-footer2.png' %}" alt="" class="img-fluid footer-logo">
-        <div class="container">
-            <div class="row justify-content-between p-3">
-                <div class="col-12 col-sm-3 mt-3 mt-md-0">
+        <!-- <div class="container"> -->
+            <div class="row justify-content-around flex-wrap flex-md-nowrap p-3">
+                <div class="p-3 flex-sm-grow-1">
+                <!-- <div class="col-12 col-sm-3 mt-3 mt-md-0"> -->
                     <h4 class="text-light text-nowrap">D O X A I H</h4>
-                    <p class="text-white-50">Кафе кавказской кухни с доставкой блюд до двери Вашего дома.</p>
+                    <p class="">Кафе кавказской кухни с доставкой блюд до двери Вашего дома.</p>
+                    <p>Вы можете посетить наше кафе грузинской здоровой еды <a href="http://doxaih.ru/contacts/">ЗДЕСЬ!</a>.</p>
                 </div>
-                <div class="col-12 col-sm-4">
+                <div class="p-3 flex-grow-1">
+                <!-- <div class="col-12 col-sm-4"> -->
                 {% include "includes/footer-form.html" %}
                 </div>
-                <div class="col-12 col-sm-3 mt-3 mt-md-0">
-                    <table class="mx-md-auto">
+                <div class="p-3 my-xs-4">
+                <!-- <div class="col-12 col-sm-3 mt-3 mt-md-0"> -->
+                    <table class="p-3">
                        <tr>
                          <td><i class="fas fa-envelope"></i></td>
                          <td class="pl-3 text-light text-nowrap">info@doxaih.ru</td>
@@ -23,6 +27,7 @@
                          <td class="pl-3 text-light text-nowrap">{{ number_phone }}</td>
                        </tr>
                     </table>
+                    <p class="">Здесь можно купить еду грузинской кухни с доставкой по Балашихе.<br>У нас быстро приготовят вкусную еду с бесплатной доставкой до двери вашего дома.</p>
                 </div>
             </div>
             <div class="row flex-column pb-5 d-none">
@@ -42,7 +47,7 @@
                 </div>
             </div>
     	{#	{% include "includes/login_bar.html" %}  #}
-        </div>
+        <!-- </div> -->
     </div>
 </footer>
 {% endblock footer %}

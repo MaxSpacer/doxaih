@@ -745,8 +745,12 @@ button:focus {
           left: 0;
           bottom: 0;*/
           /* height: 100%; */
+
     }
 
+.footer {
+      color: white;
+    }
 .footer tr{
        font-size: 1.4em;
     }
