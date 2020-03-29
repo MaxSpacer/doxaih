@@ -16,6 +16,7 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from django.http import HttpResponseRedirect
 from landing import views
+
 def basket_adding(request):
     return_dict = dict()
     session_key = request.session.session_key

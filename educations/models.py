@@ -149,5 +149,5 @@ class EducationResultPoint(models.Model):
         verbose_name_plural = 'Результаты курса'
 
 
-from .signals import send_mail_on_create
-post_save.connect(send_mail_on_create,sender=EducationOrder,dispatch_uid="my_unique_identifier")
+# from .signals import send_mail_on_create
+# post_save.connect(send_mail_on_create,sender=EducationOrder,dispatch_uid="my_unique_identifier")

@@ -35,6 +35,7 @@ $(document).ready(function() {
         // form-post
         var form = $('.formBuyProduct');
         var form_for_all_pages = $('.formsfor');
+        
         function basketUpdating(product_id, numb, is_delete){
             var data = {}
             data.product_id = product_id;
