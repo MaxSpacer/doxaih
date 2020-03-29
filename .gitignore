@@ -3,4 +3,5 @@
 __pycache__
 myvenv
 .DS_Store
-/migrations
+#/migrations
+static_prod/
