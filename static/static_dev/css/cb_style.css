@@ -540,6 +540,7 @@ opacity: 0.3; } */
 /*  NAV
 ========================================== */
 .text-logo{
+    padding-left: 13px;
     font-size: 0.8rem;
     white-space: nowrap;
 }
