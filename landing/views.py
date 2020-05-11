@@ -16,11 +16,12 @@ def landing(request):
     product_category_list = ProductCategory.objects.filter(is_active=True)
     return_list = list()
     for item in product_category_list:
-        product_images = ProductImage.objects.filter(is_active=True, is_main=True, product__is_active=True, product__category = item).first()
+        product_images = ProductImage.objects.filter(is_active=True, product__is_active=True, product__category = item).first()
+        print('product_images')
+        print(product_images)
         if product_images:
             return_list.append(product_images)
     landpost = Landpost.objects.filter(is_active=True)
-
     return render(request, 'landing/landing.html', {'product_category_list': product_category_list, 'product_image_list': return_list, 'landpost': landpost})
 
 

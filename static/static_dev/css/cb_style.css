@@ -273,7 +273,12 @@ opacity: 0.3; } */
 }
 .card-product{
     min-width: 250px;
+    max-width: 400px;
     margin-top: 25px;
+}
+.card-title-custom{
+    /* font-size:17px; */
+    font-weight:800;
 }
 /*  BACKGROUND CARDS & TRANSPARENT
 ========================================== */
