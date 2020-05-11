@@ -145,6 +145,9 @@ $(document).ready(function() {
         $( ".product-text-description" ).click(function() {
             $( ".product-text-description" ).toggle("show");
         });
+        $( ".btn-properties" ).click(function() {
+            $( ".product-text-description" ).toggle("show");
+        });
         // $( ".card-img-top" ).click(function() {
         //     $( ".product-text-description" ).addClass("show");
         // });

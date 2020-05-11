@@ -17,17 +17,20 @@
 </section>
 
 <section class="container my-3">
-    <div class="row">
+    <!-- <div class="row"> -->
             <div class="card-deck w-100 justify-content-center">
                 {% for product in products%}
-                    <div class="card col-md-4 p-0">
+                <!-- <div class="col-12 col-md-4 col-lg-4 mt-4"> -->
+                    <div class="card card-product p-0">
                         <!-- <a class="card m-0" href="{% url 'products:product_n' product.id %}"> -->
                             <div class="for-zoom">
                                 {% for item in product.productimage_set.all%}
                                 <img class="card-img-top img-zoom" src="{{ item.image.url }}" alt="">
                                 {% endfor %}
                             </div>
+                            <div type="" class="btn-properties btn-light">Состав ...</div>
                             <div class="product-text-description">{{ product.description }}</div>
+
                             <div class="card-body px-2">
                                 <h5 class="card-title text-center m-0">{{ product.name }}</h5>
                             </div>
@@ -51,9 +54,10 @@
                                 </form>
                             </div>
                     </div>
+                <!-- </div> -->
                 {% endfor %}
             </div>
-    </div>
+    <!-- </div> -->
 </section>
 
 <!--

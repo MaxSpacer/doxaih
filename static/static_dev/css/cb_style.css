@@ -121,6 +121,18 @@ a:hover{
     background-color: white;
     border-color: #f28356;
 }
+.btn-properties{
+    /* max-width: 35px; */
+    max-height: 35px;
+    position:absolute;
+    top: 2%;
+    right: 2%;
+    border-radius: 1rem;
+    cursor: pointer;
+    border: 0px solid #f28356;
+    padding: 2px 7px;
+    background: rgba(255, 255, 255, 0.3);
+}
 /* .btn, .form-control {
     border-radius:                    0px;
     -webkit-border-radius:            0px;
@@ -228,15 +240,15 @@ opacity: 0.3; } */
 }
 .product-text-description{
     position: absolute;
-    left: 0;
-    top: 1%;
+    left: 1%;
+    top: 8%;
     padding: 20px;
     font-size: 1rem;
     font-weight: 600;
     /* line-height: 0.9rem; */
     text-align: center;
     border-radius: 1.1rem;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.5);
     background-clip: padding-box;
     /* text-shadow: 1px 1px 2px black; */
     display: none;
@@ -259,7 +271,10 @@ opacity: 0.3; } */
 .no-border{
         border: 0px;
 }
-
+.card-product{
+    min-width: 250px;
+    margin-top: 25px;
+}
 /*  BACKGROUND CARDS & TRANSPARENT
 ========================================== */
 
