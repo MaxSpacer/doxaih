@@ -1,8 +1,7 @@
 {% load static %}
 {% block footer %}
 <footer class="footer container-fluid px-0 mt-5" >
-    <div class="position-relative">
-        <img src="{% static 'img/lkwid-logo-footer2.png' %}" alt="" class="img-fluid footer-logo">
+    <!-- <div class="position-relative"> -->
         <!-- <div class="container"> -->
             <div class="row justify-content-around flex-wrap flex-md-nowrap p-3">
                 <div class="p-3 flex-sm-grow-1">
@@ -11,7 +10,9 @@
                     <p class="">Кафе кавказской кухни с доставкой блюд до двери Вашего дома.</p>
                     <p>Вы можете посетить наше кафе грузинской здоровой еды <a href="http://doxaih.ru/contacts/">ЗДЕСЬ!</a>.</p>
                 </div>
-                <div class="p-3 flex-grow-1">
+                <div class="p-3 flex-grow-1 position-relative">
+                    <img src="{% static 'img/lkwid-logo-footer2.png' %}" alt="" class="img-fluid footer-logo">
+
                 <!-- <div class="col-12 col-sm-4"> -->
                 {% include "includes/footer-form.html" %}
                 </div>
@@ -48,6 +49,6 @@
             </div>
     	{#	{% include "includes/login_bar.html" %}  #}
         <!-- </div> -->
-    </div>
+    <!-- </div> -->
 </footer>
 {% endblock footer %}

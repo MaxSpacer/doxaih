@@ -139,7 +139,7 @@ $(document).ready(function() {
         });
         $('#modal_message').modal('show')
         $("input[type='number']").inputSpinner();
-        $( ".for-zoom" ).click(function() {
+        $( ".show-product-text-description" ).click(function() {
             $( ".product-text-description" ).toggle("show");
         });
         $( ".product-text-description" ).click(function() {

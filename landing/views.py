@@ -13,7 +13,7 @@ from .models import *
 
 
 def landing(request):
-    product_category_list = ProductCategory.objects.filter(is_active=True)
+    product_category_list = ProductCategory.objects.filter(is_active=True).order_by('order_sort')
     return_list = list()
     for item in product_category_list:
         product_images = ProductImage.objects.filter(is_active=True, product__is_active=True, product__category = item).first()

@@ -29,6 +29,11 @@
          left: 0;
          right: 0; */
     }
+    .card-product{
+        /* min-width: 300px; */
+        max-width: 400px;
+        /* margin-top: 25px; */
+    }
 }
 @media (min-width: 768px) {
     #dropdown-menu-convert{
@@ -40,6 +45,7 @@
         margin: 0;
         font-size: 1.25rem;
     }
+
   .team-img img {
       max-height: 140px;
   }
@@ -166,6 +172,12 @@
 @media (min-width: 768px) and (max-width: 991.98px) {
     #dropdown-menu-convert{
         font-size: 0.8rem;
+    }
+    .nav-phone a{
+        font-size: 0.9rem;
+    }
+    .nav-phone div {
+        font-size: 0.7rem;
     }
     /* .text-logo{
         display: none;

@@ -3,7 +3,7 @@ from django.db.models.signals import post_save
 from phonenumber_field.modelfields import PhoneNumberField
 from django.db import models
 from tinymce import HTMLField
-from accounts.models import Profile
+
 
 
 class Landpost(models.Model):
@@ -24,7 +24,6 @@ class Landpost(models.Model):
 class Callmecontact(models.Model):
     customer_name = models.CharField(verbose_name="ваше имя", max_length=32, default=None)
     customer_phone = PhoneNumberField(verbose_name="ваш телефон")
-    referal = models.ForeignKey(Profile, on_delete=models.SET_DEFAULT, blank=True, null=True, default=None)
     is_emailed = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True , auto_now=False)
     updated = models.DateTimeField(auto_now_add=False , auto_now=True)
