@@ -24,10 +24,10 @@
       </button>
       <div class="dropdown-menu bg-menu text-nowrap">
           <table id="table-basket" class="table tables table-hover m-0">
-              <tbody >
+              <tbody>
                   {% for item in products_in_basket %}
                   <tr>
-                      <td class="text-left text-wrap">{{ item.pb_product }}</td>
+                      <td class="text-left name-item-product">{{ item.pb_product }}</td>
                       <td class="p-0">{{ item.pb_qty }} шт.</td>
                       <td>по {{ item.pb_price_per_item|floatformat:0 }} руб.</td>
                       <td><a class="delete-item" href="{% url 'orders:basket_adding' %}" data-product_id="{{ item.id }}">X</a></td>
