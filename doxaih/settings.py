@@ -25,7 +25,7 @@ SECRET_KEY = 'nroz4=s6m7iik7dgqg3s$vt4j7bx^t!o5m*6b7(#b!+235$v_#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['doxaih.ru','127.0.0.1']
+ALLOWED_HOSTS = ['dohaich.ru','127.0.0.1']
 # DEBUG = True
 #
 # ALLOWED_HOSTS = ['*']
@@ -195,7 +195,7 @@ EMAIL_HOST_USER = "info@doxaih.ru"
 EMAIL_HOST_PASSWORD = "In123456"
 EMAIL_USE_SSL = True
 #uncomment
-# try:
-#     from .settings_prod import *
-# except:
-#     pass
+try:
+    from .settings_prod import *
+except:
+    pass

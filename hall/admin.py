@@ -1,8 +1,8 @@
 from django.contrib import admin
 from .models import Preference
 
-admin.site.site_header = "Администрирование DOXAIH";
-admin.site.site_title = "Администрирование DOXAIH";
+admin.site.site_header = "Администрирование dohaich";
+admin.site.site_title = "Администрирование dohaich";
 
 
 

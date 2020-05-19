@@ -16,7 +16,8 @@ def landing(request):
     product_category_list = ProductCategory.objects.filter(is_active=True).order_by('order_sort')
     return_list = list()
     for item in product_category_list:
-        product_images = ProductImage.objects.filter(is_active=True, product__is_active=True, product__category = item).first()
+        product_images = ProductImage.objects.filter(product__is_active=True, product__pref_category=True, product__category = item).first()
+        # product_images = ProductImage.objects.filter(is_active=True, product__is_active=True, product__pref_category=True, product__category = item)
         print('product_images')
         print(product_images)
         if product_images:

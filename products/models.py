@@ -49,7 +49,7 @@ class Product(models.Model):
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, on_delete=models.SET_DEFAULT, blank=True, null=True, default=None, verbose_name='продукт')
     image = models.ImageField('Фото для продукта',upload_to='product_images/')
-    is_main = models.BooleanField('Главная картинка?',default=False)
+    # is_main = models.BooleanField('Главная картинка?',default=False)
     is_active = models.BooleanField('активен?',default=True)
     created = models.DateTimeField(auto_now_add=True , auto_now=False)
     updated = models.DateTimeField(auto_now_add=False , auto_now=True)
