@@ -1,5 +1,5 @@
 DEBUG = False
-ALLOWED_HOSTS = ['dohaich.ru']
+ALLOWED_HOSTS = ['dohaich.ru','www.dohaich.ru']
 
 #settings for db on server
 # DATABASES = {
