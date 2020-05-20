@@ -2,19 +2,7 @@
 {% block content %}
 {% load static %}
 
-<section class="mb-3 mt-4 bg-white">
-    <div class="container">
-        <div class="row">
-            <ul class="nav justify-content-center">
-                {% for category in product_category_list%}
-                <li class="nav-item">
-                <a class="nav-link active" href="{% url 'products:product_n' category.id %}">{{ category.name }}</a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-</section>
+{% include "includes/category_list_component.html" %}
 
 <section class="container">
     <!-- <div class="row"> -->

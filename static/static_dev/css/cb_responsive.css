@@ -22,13 +22,6 @@
         min-width: 130px;
         max-width: 131px;
     }
-    .dropdown-menu{
-         /* position: fixed; */
-         /* min-width: 500px; */
-         /* top: 9%;
-         left: 0;
-         right: 0; */
-    }
     .card-product{
         /* min-width: 300px; */
         max-width: 400px;
@@ -43,7 +36,6 @@
         border: 0;
         padding: 0;
         margin: 0;
-        font-size: 1.25rem;
     }
 
   .team-img img {
@@ -75,6 +67,10 @@
  }
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+    /* #dropdown-menu-convert{
+        top: 145%;
+    } */
+    /* .drop */
     .name-item-product{
         white-space: normal ;
     }
@@ -112,13 +108,8 @@
 }
 /* // Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
-    .dropdown-menu{
-         position: fixed;
-         width: 100%;
-         top: 9%;
-         left: 0;
-         right: 0;
-         font-size: 1.4rem;
+    #dropdown-menu-convert{
+                top: 150%;
     }
     .nav-phone > a {
     font-size: 2.2rem;
@@ -166,15 +157,15 @@
 @media (min-width: 576px) and (max-width: 767.98px) { ... }
 
 @media (min-width: 576px) and (max-width: 991.98px) {
-    #navbarCollapse a{
+    /* #navbarCollapse a{
         font-size: 0.9rem;
-    }
+    } */
  }
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-    #dropdown-menu-convert{
+    /* #dropdown-menu-convert{
         font-size: 0.8rem;
-    }
+    } */
     .nav-phone a{
         font-size: 0.9rem;
     }

@@ -5,8 +5,8 @@
         <a href="/">
             <img class="" src="{% static 'img/dishes.png' %}" alt="">
         </a>
-        <div class="text-logo float-right">
-            <div>Кафе</div>
+        <div class="text-logo float-right d-none d-lg-block ml-3">
+            <div>Кафе "Бистро"</div>
             <div>Хинкальная</div>
             <div>г. Балашиха</div>
         </div>
@@ -17,7 +17,7 @@
         <div class="d-none d-md-block">Приём заказов с 09:00 до 20:30</div>
     </div>
 
-    <div class="btn-group order-sm-6">
+    <div class="btn-group order-md-6">
       <button type="button" class="btn dropdown-toggle p-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <img src="{% static 'img/dish.png' %}" class="cart-dish" alt="">
           <span id="basket_total_nmb">{{ products_total_nmb }}</span>
@@ -56,7 +56,7 @@
                 <form class="formsfor invisible m-0" action="{% url 'orders:basket_adding' %}" method="">
                     {% csrf_token %}
                 </form>
-                <ul class="nav flex-column flex-md-row">
+                <ul class="nav flex-column flex-md-row align-content-center">
                     <li class="nav-item">
                         <a class="nav-link{% if request.path == '/' %} proactive{% endif %}" href="/"><i class="fas fa-home fa-sm mr-2"></i>Меню</a>
                     </li>
@@ -66,12 +66,12 @@
                     <li class="nav-item">
                         <a class="nav-link{% if '/contacts/' in request.path %} proactive{% endif %}" href="/contacts">Контакты</a>
                     </li>
-                    <li class="text-white py-3 pl-3 d-md-none">
+                    <li class="text-white p-3 d-md-none">
                         <i class="fas fa-phone fa-flip-horizontal"></i>
                         <span>{{ number_phone }}</span>
                     </li>
-                    <li class="d-md-none pl-3">
-                        <button type="button" onclick="location.href='#id_form_footer';" class="btn btn-form px-3 px-sm-5">Заказать звонок</button>
+                    <li class="d-md-none text-center">
+                        <button type="button" onclick="location.href='#id_form_footer';" class="btn btn-form">Заказать звонок</button>
                     </li>
                 </ul>
             <!-- </nav> -->

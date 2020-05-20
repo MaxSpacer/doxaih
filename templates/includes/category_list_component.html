@@ -1,0 +1,18 @@
+{% block category_list_component %}
+{% load static %}
+
+<section class="mt-4 bg-white category-list-component">
+    <div class="container">
+        <div class="row">
+            <ul class="nav w-100 justify-content-center">
+                {% for category in product_category_list%}
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'products:product_n' category.id %}">{{ category.name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+
+{% endblock category_list_component %}
