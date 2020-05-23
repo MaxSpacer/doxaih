@@ -72,10 +72,10 @@ $(document).ready(function() {
                     $('.tables tbody').html("");
                     $.each(data.products, function(k, v){
                         var myTrunc = Math.trunc( v.price_per_item );
-                        $('.tables').append('<tr><td class="text-wrap text-left">'+v.product_name+'</td><td>'+v.numb+' шт.</td><td> по '+myTrunc+' руб.</td><td><a class="delete-item" href="#" data-product_id="'+v.id+'">X</a></td></tr>');
+                        $('.tables').append('<tr><td class="name-item-product text-left">'+v.product_name+'</td><td>'+v.numb+' шт.</td><td> по '+myTrunc+' руб.</td><td><a class="delete-item" href="#" data-product_id="'+v.id+'">X</a></td></tr>');
                     });
                     if (data.products_total_nmb > 0) {
-                        $('.tables').append('<tr><td class="text-wrap text-left">'+'Итого:'+'</td><td></td><td>'+data.products_in_basket_total_price+' руб.</td><td></td></tr>');
+                        $('.tables').append('<tr><td class="text-left">'+'Итого:'+'</td><td></td><td>'+data.products_in_basket_total_price+' руб.</td><td></td></tr>');
                         $(".create-order").removeClass("d-no");
                     } else {
                         $(".create-order").addClass("d-no");

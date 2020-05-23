@@ -1,33 +1,35 @@
 {% block header %}
 {% load static %}
+{% load format_filters %}
 <nav class="navbar flex-nowrap bg-menu p-1 text-light fixed-top">
     <div class="navbar-brand text-nowrap m-0 p-1">
         <a href="/">
             <img class="" src="{% static 'img/dishes.png' %}" alt="">
         </a>
-        <div class="text-logo float-right d-none d-lg-block ml-3">
-            <div>Кафе "Бистро"</div>
-            <div>Хинкальная</div>
-            <div>г. Балашиха</div>
+        <div class="text-logo float-right d-none d-sm-block ml-3">
+            <div>Кафе</div>
+            <div>"Бистро по-грузински"</div>
+            <div>Хинкальная г. Балашиха</div>
+            <div></div>
         </div>
     </div>
 
-    <div class="nav-phone text-right text-nowrap order-md-5 mr-md-3">
-        <a class="d-block" href="tel:{{ number_phone }}"><i class="fas fa-phone fa-flip-horizontal fa-fw"></i><span class="d-none d-md-inline">{{ number_phone }}</span></a>
+    <div class="nav-phone text-right order-md-5 mr-md-3">
+        <a class="d-block text-nowrap" href="tel:{{ number_phone }}"><i class="fas fa-phone fa-flip-horizontal fa-fw"></i><span class="d-none d-md-inline">{{ number_phone }}</span></a>
         <div class="d-none d-md-block">Приём заказов с 09:00 до 20:30</div>
     </div>
 
-    <div class="btn-group order-md-6">
+    <div class="btn-group order-md-6 pos">
       <button type="button" class="btn dropdown-toggle p-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <img src="{% static 'img/dish.png' %}" class="cart-dish" alt="">
           <span id="basket_total_nmb">{{ products_total_nmb }}</span>
       </button>
-      <div class="dropdown-menu bg-menu text-nowrap">
+      <div class="dropdown-menu bg-menu text-nowrap" id='menu-for-orders-in-basket'>
           <table id="table-basket" class="table tables table-hover m-0">
               <tbody>
                   {% for item in products_in_basket %}
                   <tr>
-                      <td class="text-left name-item-product">{{ item.pb_product }}</td>
+                      <td class="text-left name-item-product">{{ item.pb_product|capitalize }}</td>
                       <td class="p-0">{{ item.pb_qty }} шт.</td>
                       <td>по {{ item.pb_price_per_item|floatformat:0 }} руб.</td>
                       <td><a class="delete-item" href="{% url 'orders:basket_adding' %}" data-product_id="{{ item.id }}">X</a></td>
@@ -56,7 +58,7 @@
                 <form class="formsfor invisible m-0" action="{% url 'orders:basket_adding' %}" method="">
                     {% csrf_token %}
                 </form>
-                <ul class="nav flex-column flex-md-row align-content-center">
+                <ul class="nav flex-column flex-md-row align-content-center flex-nowrap">
                     <li class="nav-item">
                         <a class="nav-link{% if request.path == '/' %} proactive{% endif %}" href="/"><i class="fas fa-home fa-sm mr-2"></i>Меню</a>
                     </li>
@@ -68,7 +70,7 @@
                     </li>
                     <li class="text-white p-3 d-md-none">
                         <i class="fas fa-phone fa-flip-horizontal"></i>
-                        <span>{{ number_phone }}</span>
+                         <a class='text-light' href="tel:{{ number_phone }} ">{{ number_phone }}</a>
                     </li>
                     <li class="d-md-none text-center">
                         <button type="button" onclick="location.href='#id_form_footer';" class="btn btn-form">Заказать звонок</button>

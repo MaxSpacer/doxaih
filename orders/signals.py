@@ -24,7 +24,6 @@ def update_products_in_basket_on_create(sender, instance, created, **kwargs):
             print(items)
             items.save()
 
-
         context = {
 		    'order_name': instance.customer_name,
 		    'order_number': instance.pk,
@@ -34,6 +33,7 @@ def update_products_in_basket_on_create(sender, instance, created, **kwargs):
 		    'total_price_order': instance.total_price_order,
 		    # 'basket_order': instance,
 		}
+
         context["basket_order"] = list()
         for item in products_in_basket:
             product_dict = dict()
@@ -45,14 +45,13 @@ def update_products_in_basket_on_create(sender, instance, created, **kwargs):
             # product_dict["products_in_basket_total_price"] = item.pb_total_price
             context["basket_order"].append(product_dict)
 
-
         print(products_in_basket)
         print(context)
         subject = 'Заказ № %s' % instance.pk
         html_message = render_to_string('mail_templates/mail_template_eduorder.html', context)
         plain_message = strip_tags(html_message)
-        from_email = 'info@doxaih.ru'
-        to = 'zakaz@doxaih.ru'
+        from_email = 'info@dohaich.ru'
+        to = 'zakaz@dohaich.ru'
         if instance.is_emailed == False:
             if subject and html_message and from_email:
                 try:

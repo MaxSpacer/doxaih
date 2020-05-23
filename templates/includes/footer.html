@@ -4,28 +4,30 @@
     <!-- <div class="position-relative"> -->
         <!-- <div class="container"> -->
             <div class="row justify-content-around flex-wrap flex-md-nowrap p-3">
-                <div class="p-3 flex-sm-grow-1">
+                <div class="p-3 col-sm-4">
                 <!-- <div class="col-12 col-sm-3 mt-3 mt-md-0"> -->
                     <h4 class="text-light text-nowrap">D O H A I C H</h4>
                     <p class="">Кафе кавказской кухни с доставкой блюд до двери Вашего дома.</p>
                     <p>Вы можете посетить наше кафе грузинской здоровой еды <a href="http://dohaich.ru/contacts/">ЗДЕСЬ!</a>.</p>
                 </div>
-                <div class="p-3 flex-grow-1 position-relative">
+                <div class="p-3 col-sm-4">
                     <!-- <img src="{% static 'img/dishes.png' %}" alt="" class="img-fluid footer-logo"> -->
 
                 <!-- <div class="col-12 col-sm-4"> -->
                 {% include "includes/footer-form.html" %}
                 </div>
-                <div class="p-3 my-xs-4">
+                <div class="p-3 col-sm-4">
                 <!-- <div class="col-12 col-sm-3 mt-3 mt-md-0"> -->
                     <table class="p-3">
                        <tr>
                          <td><i class="fas fa-envelope"></i></td>
-                         <td class="pl-3 text-light text-nowrap"><a href="mailto:info@doxaih.ru?subject=feedback">info@doxaih.ru</a></td>
+                         <td class="pl-3 text-light text-nowrap"><a href="mailto:info@dohaich.ru?subject=feedback">info@dohaich.ru</a></td>
                        </tr>
                        <tr>
                          <td><i class="fas fa-phone fa-flip-horizontal"></i></td>
-                         <td class="pl-3 text-light text-nowrap">{{ number_phone }}</td>
+                         <td class="pl-3 text-light text-nowrap">
+                             <a href="tel:{{ number_phone }}">{{ number_phone }}</a>
+                         </td>
                        </tr>
                     </table>
                     <p class="">Здесь можно купить еду грузинской кухни с доставкой по Балашихе.<br>У нас быстро приготовят вкусную еду с бесплатной доставкой до двери вашего дома.</p>

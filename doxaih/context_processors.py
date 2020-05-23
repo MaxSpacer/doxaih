@@ -1,7 +1,7 @@
 from django.template.context_processors import request
 from datetime import datetime
 from landing.forms import CallmecontactForm
-from orders.models import ProductinBasket
+from orders.models import ProductinBasket, Product
 from products.models import ProductImage
 from hall.models import Preference
 from django.contrib import messages
@@ -18,5 +18,4 @@ def getting_basket_info(request):
     form1 = CallmecontactForm(request.POST or None)
     popular_products = ProductImage.objects.filter(is_active=True, product__is_active=True, product__popular = True)
     number_phone = Preference.objects.filter(is_active=True).first()
-
     return locals()

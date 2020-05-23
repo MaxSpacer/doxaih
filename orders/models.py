@@ -20,12 +20,15 @@ class Status_order(models.Model):
 
 
 class Order(models.Model):
+    def get_status():
+        Status_ord = Status_order.objects.first()
+        return Status_ord.id
     customer_name = models.CharField(verbose_name="ваше имя", max_length=64, blank=False, null=True)
     customer_phone = PhoneNumberField(verbose_name="ваш телефон", blank=False, null=True)
     customer_adress = models.TextField(verbose_name="адрес доставки", blank=False, null=True)
     customer_comments = models.TextField(verbose_name="комментарии к заказу", blank=True, null=True, default=None)
     total_price_order = models.DecimalField(verbose_name = 'общая сумма заказа', max_digits=10, decimal_places=2, default=0) #total_price in order for all products
-    status = models.ForeignKey(Status_order, on_delete=models.SET_DEFAULT, default=1, verbose_name = 'статус заказа')
+    status = models.ForeignKey(Status_order, on_delete=models.SET_DEFAULT, default=get_status(), verbose_name = 'статус заказа')
     is_emailed = models.BooleanField(default=False)
     order_session_key = models.CharField(max_length=128, blank=True, null=True, default=None)
     created = models.DateTimeField(auto_now_add=True , auto_now=False)
@@ -40,6 +43,9 @@ class Order(models.Model):
 
     def save(self, *args, **kwargs):
         super(Order, self).save(*args, **kwargs)
+
+
+
 
 # post_save.connect(product_in_order_post_save, sender=ProductinOrder)
 

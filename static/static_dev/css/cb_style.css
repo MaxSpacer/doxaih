@@ -588,7 +588,9 @@ button:focus {
         background-image: url("/static/img/menu-toggler.png");
     background-size: 100% 100%;
 }
-
+.navbar-brand img {
+    max-height: 45px;
+}
 .cart-dish{
     cursor: pointer;
 }
@@ -609,20 +611,12 @@ button:focus {
                 white-space: nowrap;
 }
 .dropdown-menu{
-     /* position: fixed;
-     right: 0; */
-     top: 110%;
+     top: 100%;
      left: auto;
      right: 0;
 }
 .dropdown-toggle::after {
     display:none;
-}
-.dropdown-menu .table td{
-        /* border-bottom: 1px solid #535251; */
-        /* background-color: #535251; */
-      /* width: 200px;
-      height: 100px; */
 }
 .delete-item{
     font-size: 1.5rem;
@@ -633,7 +627,6 @@ button:focus {
     border: 0;
     color: white;
 }
-
 .input[type="number"] {
   -webkit-appearance: textfield;
      -moz-appearance: textfield;
@@ -643,21 +636,14 @@ button:focus {
 .input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
-
-
 .card-img-small {
 	max-width: 20%;
 	max-height: 20%;
 }
-
 .card-img-medium {
 	max-width: 30%;
     max-height: 128px;
 }
-/* .container{
-    padding: 3px;
-} */
-
 .about-main{
     background-color:#f7f7f7;
 }
@@ -742,15 +728,6 @@ button:focus {
 
 .footer{
         background-color: #332f2e;
-        /* background-image: url('/static/img/lkwid-logo-dark-footer.png');
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: 300px; */
-          /* position: absolute;
-          left: 0;
-          bottom: 0;*/
-          /* height: 100%; */
-
     }
 .cursor-pointer{cursor:pointer;}
 .footer {
@@ -770,8 +747,5 @@ button:focus {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-       /* top: 50%; */
-       /* left: 50%; */
-       /* transform: translate(-50%, -50%); */
-       opacity: 0.03;
+    opacity: 0.03;
     }

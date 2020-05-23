@@ -5,10 +5,8 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy, reverse
 from django.views import generic
 from bootstrap_modal_forms.generic import (BSModalLoginView,
-                                           BSModalCreateView,
-                                           BSModalUpdateView,
-                                           BSModalReadView,
-                                           BSModalDeleteView)
+                                           BSModalCreateView, BSModalUpdateView,
+                                           BSModalReadView, BSModalDeleteView)
 
 from bootstrap_modal_forms.mixins import PassRequestMixin
 from .forms import OrderForm

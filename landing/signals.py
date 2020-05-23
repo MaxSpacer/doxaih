@@ -23,8 +23,8 @@ def send_mail_on_callback(sender, instance, created, **kwargs):
         subject = 'Заказ звонка № call-%s' % instance.id
         html_message = render_to_string('mail_templates/mail_callme_template.html', context)
         plain_message = strip_tags(html_message)
-        from_email = 'info@doxaih.ru'
-        to = 'zakaz@doxaih.ru'
+        from_email = 'info@dohaich.ru'
+        to = 'zakaz@dohaich.ru'
         # print(instance.is_emailed)
         if instance.is_emailed == False:
             if subject and html_message and from_email:

@@ -26,14 +26,9 @@ SECRET_KEY = 'nroz4=s6m7iik7dgqg3s$vt4j7bx^t!o5m*6b7(#b!+235$v_#'
 DEBUG = True
 
 ALLOWED_HOSTS = ['dohaich.ru','127.0.0.1']
-# DEBUG = True
-#
-# ALLOWED_HOSTS = ['*']
-
-
-# Application definition
 
 INSTALLED_APPS = [
+    'doxaih',
     'tinymce',
     'babel',
     'filebrowser',
@@ -191,8 +186,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_PORT = '1025'
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = "info@doxaih.ru"
-EMAIL_HOST_PASSWORD = "In123456"
+EMAIL_HOST_USER = "info@dohaich.ru"
+EMAIL_HOST_PASSWORD = "Keyinfo1"
 EMAIL_USE_SSL = True
 #uncomment
 try:
