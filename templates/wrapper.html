@@ -2,7 +2,7 @@
 <!doctype html>
 
 <!-- <html lang="ru"> -->
-<html lang="ru" class="h-100 mw-100">
+<html lang="ru" class="mw-100">
   <head>
 <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -18,38 +18,41 @@
     <link rel="stylesheet" href="{% static 'fonts/GothamPro/stylesheet.css' %}" type="text/css">
     <title>DOHAICH</title>
 
-  </head>
+</head>
     <body>
-    {% include "includes/header.html" %}
-    {% include "_modal.html" %}
-    <main role="main" class="main margin">
-        {% include "includes/message_modal.html" %}
-        {% block content %}
-        {% endblock content %}
-    </main>
-    {% include "includes/footer.html" %}
-      <script
+        <a id="back-to-top" href="#" class="btn btn-form btn-lg back-to-top" role="button" title="Кликните чтобы вернуться наверх" data-toggle="tooltip" data-placement="left"><i class="fas fa-chevron-up"></i></a>
+        {% include "includes/header.html" %}
+        {% include "_modal.html" %}
+        <main role="main" class="main margin">
+            {% include "includes/message_modal.html" %}
+            {% block content %}
+            {% endblock content %}
+        </main>
+        {% include "includes/footer.html" %}
+        <script
           src="https://code.jquery.com/jquery-3.3.1.js"
           integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
           crossorigin="anonymous">
-      </script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-      <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-      <script src="{% static 'js/jquery.maskedinput.min.js' %}"></script>
-      <script src="{% static 'js/bootstrap-input-spinner.js' %}"></script>
-      <script src="{% static 'js/script.js' %}"></script>
-      <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
-    {% block extrascripts %}
-    <!-- modal window for modal forms -->
-    <script>
-    $(function() {
-        $(".create-order").modalForm({
-            formURL: "{% url 'orders:create_order' %}"
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/jquery.maskedinput.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap-input-spinner.js' %}"></script>
+        <script src="{% static 'js/script.js' %}"></script>
+        <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
+        {% block extrascripts %}
+        <!-- modal window for modal forms -->
+        <script>
+        $(function() {
+            $(".create-order").modalForm({
+                formURL: "{% url 'orders:create_order' %}"
+            });
+            // $("input[type='number']").inputSpinner();
         });
-        // $("input[type='number']").inputSpinner();
-    });
-    </script>
-    {% endblock extrascripts %}
+        </script>
+
+
+        {% endblock extrascripts %}
   </body>
 </html>

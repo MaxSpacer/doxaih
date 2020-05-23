@@ -2,13 +2,12 @@
 {% load static %}
 {% block content %}
 
-<section class="container-fluid pb-md-5">
-      <div class="col-12 text-center mb-0 p-3">
-        <h3 class="mb-0">Контакты</h3>
-      </div>
+<section class="container-fluid pb-md-5" id="contacts_footer">
+        <div class="col-12 text-center mb-0 p-3">
+            <h3 class="mb-0">Контакты</h3>
+        </div>
     <div class="row justify-content-center">
-        <div class="col-11 col-md-5 col-lg-3 p-3  pl-lg-0 ">
-            <!-- <div class=""> -->
+        <div class="col-11 col-md-5 col-lg-3 p-3 pl-lg-0">
                 <h5 class="mb-2">DOHAICH</h5>
                 <p>Мы настоящие гурманы грузинской кухни!</p>
                 <p>Мы ждем Вас в нашем кафе-хинкальной "Бистро по-грузински"</p>
@@ -18,17 +17,32 @@
                 </p>
                 <p>
                     <span><i class="fas fa-phone fa-flip-horizontal"></i></span>
-                    <span class="pl-2 text-nowrap">+7 (925) 799-55-37</span>
-                  </p>
-                  <p>
+                    <span class="pl-2 text-nowrap">
+                        <a href="tel:joe@example.com?subject=feedback">
+                            +7 (925) 799-55-37
+                        </a>
+                    </span>
+                </p>
+                <p>
                     <span><i class="fas fa-envelope"></i></span>
-                    <span class="pl-2 text-nowrap">info@dohaich.ru</span>
+                    <span class="pl-2 text-nowrap">
+                        <a href="mailto:info@dohaich.ru?subject=feedback">
+                            info@dohaich.ru
+                        </a>
+                    </span>
+                </p>
+                <p>
+                    <span><i class="fab fa-instagram"></i></span>
+                    <span class="pl-2 text-nowrap">
+                        <a href="https://instagram.com/kafe_bistro_balashiha" target="_blank">
+                            kafe_bistro_balashiha
+                        </a>
+                    </span>
                 </p>
                 <p class="">
                   ©  2020 Dohaich. Все права защищены.
                 </p>
 
-            <!-- </div> -->
         </div>
         <div class="col-11 col-md-7 col-lg-6 p-0 map">
             <!-- <img class="img-f" src="{% static 'img/img38.png' %}" alt="Second slide"> -->
