@@ -42,9 +42,9 @@ def update_products_in_basket_on_create(sender, instance, created, **kwargs):
             # product_dict["products_in_basket_total_price"] = item.pb_total_price
             context["basket_order"].append(product_dict)
 
-        print(products_in_basket)
-        print(context)
-        subject = 'Заказ № %s' % instance.pk
+        # print(products_in_basket)
+        # print(context)
+        subject = u'Заказ № %s' % instance.pk
         html_message = render_to_string('mail_templates/mail_template_eduorder.html', context)
         plain_message = strip_tags(html_message)
         from_email = 'info@dohaich.ru'
