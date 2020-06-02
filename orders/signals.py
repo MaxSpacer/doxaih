@@ -19,9 +19,6 @@ def update_products_in_basket_on_create(sender, instance, created, **kwargs):
         for items in products_in_basket:
             items.pb_order = instance
             items.pb_is_active = False
-            # items.pb_session_key = None
-            print(instance)
-            print(items)
             items.save()
 
         context = {

@@ -1,6 +1,7 @@
 from django.contrib import admin
 from products.models import *
-# Register your models here.
+
+
 class ProductCategoryAdmin(admin.ModelAdmin):
     list_display = [field.name for field in ProductCategory._meta.fields]
 admin.site.register(ProductCategory, ProductCategoryAdmin)
