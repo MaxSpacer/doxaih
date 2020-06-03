@@ -35,6 +35,7 @@ class Product(models.Model):
     description = models.TextField('описание', blank=True, null=True, default=None)
     popular = models.BooleanField('популярные товары', default=False)
     pref_category = models.BooleanField('Представитель категории', default=False)
+    order_sort = models.PositiveSmallIntegerField('Порядок сортировки', blank=True, null=True, default=None)
     is_active = models.BooleanField('активен?',default=True)
     created = models.DateTimeField(auto_now_add=True , auto_now=False)
     updated = models.DateTimeField(auto_now_add=False , auto_now=True)
