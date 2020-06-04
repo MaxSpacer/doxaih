@@ -47,6 +47,7 @@ class Product(models.Model):
         verbose_name = 'Продукт'
         verbose_name_plural = 'Продукция'
 
+
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, on_delete=models.SET_DEFAULT, blank=True, null=True, default=None, verbose_name='продукт')
     image = models.ImageField('Фото для продукта',upload_to='product_images/')

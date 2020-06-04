@@ -7,3 +7,9 @@ register = template.Library()
 @stringfilter
 def capitalize_this(value):
     return value.capitalize()
+
+
+@register.filter(name='grammtolitr')
+# @stringfilter
+def grammtolitr(value):
+        return value/1000

@@ -1,7 +1,7 @@
 {% extends "wrapper.html" %}
 {% block content %}
 {% load static %}
-
+{% load format_filters %}
 {% include "includes/category_list_component.html" %}
 
 <section class="container">
@@ -27,7 +27,11 @@
                                 <form class="formBuyProduct bg-white text-center" action="{% url 'orders:basket_adding' %}">{% csrf_token %}
                                     <div class="row justify-content-around text-nowrap">
                                         <div class="col-3 p-2">
-                                            <div class="card__info">{{ product.weight }} {{ product.volume_type }}</div>
+                                            <div class="card__info">
+                                                {% if product.volume_type == 'л.' %}
+                                                {{ product.weight|grammtolitr }}
+                                                {% else %}{{ product.weight }} {%endif%}
+                                                 {{ product.volume_type }}</div>
                                             <div property="price" class="card__price">{{ product.price }} руб.</div>
                                         </div>
                                         <div class="col-5 p-2">
